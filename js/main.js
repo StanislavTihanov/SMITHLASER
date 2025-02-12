@@ -1,68 +1,22 @@
 "use strict"
 //------------------------------------------------------------------------Готовые блоки кода
 
-//------------------------------------------------------------------------preloader
-//document.body.onload = () => {
-//  setTimeout(() => {
-//    let preloader = document.getElementById('preloader');
-//    if (!preloader.classList.contains('done')) {
-//      preloader.classList.add('done');
-//    }
-//  }, 1000);
-//}
-//------------------------------------------------------------------------preloader
-
-//------------------------------------------------------------------------таймер обратного отсчета
-//const startDays = 2; // Количество дней
-//const startHours = 5; // Количество часов
-//const startMinutes = 10; // Количество минут
-//const startSeconds = 0; // Количество секунд
-//
-//// Переводим все в секунды
-//let time = startDays * 24 * 60 * 60 + startHours * 60 * 60 + startMinutes * 60 + startSeconds;
-//
-//const countdownElement = document.getElementById('countdown');
-//
-//function updateCountdown() {
-//    const days = Math.floor(time / (24 * 60 * 60)); // Количество дней
-//    const hours = Math.floor((time % (24 * 60 * 60)) / 3600); // Количество часов
-//    const minutes = Math.floor((time % 3600) / 60); // Количество минут
-//    const seconds = time % 60; // Количество секунд
-//
-//    // Форматируем время
-//    countdownElement.innerText = `${days}:${hours < 10 ? '0' : ''}${hours}:${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
-//
-//    if (time > 0) {
-//        time--;
-//    } else {
-//        clearInterval(timer);
-//        countdownElement.innerText = "Время вышло!";
-//    }
-//}
-//
-//const timer = setInterval(updateCountdown, 1000);
-//------------------------------------------------------------------------таймер обратного отсчета
-
-
-//------------------------------------------------------------------------появление бекграунда у шапки при прокрутки вниз
-window.addEventListener('scroll', () => {
-  if(pageYOffset > 50) {
-    document.querySelector('.header').classList.add('header__bg');
-  } else {
-    document.querySelector('.header').classList.remove('header__bg');
-  }
+//------------------------------------------------------------------------search
+document.querySelectorAll('.search').forEach(button => {
+  button.addEventListener('click', (event) => {
+      event.stopPropagation(); // Останавливаем всплытие события
+      button.classList.add('_act');
+  });
 });
-//------------------------------------------------------------------------появление бекграунда у шапки при прокрутки вниз
 
+document.querySelectorAll('.search__block-close').forEach(closeButton => {
+  closeButton.addEventListener('click', (event) => {
+      event.stopPropagation(); // Останавливаем всплытие события
+      closeButton.closest('.search').classList.remove('_act'); // Удаляем _act у ближайшего .search
+  });
+});
 
 //------------------------------------------------------------------------search
-const searchButtons = document.querySelectorAll('.search__btn');
-const searchWindows = document.querySelectorAll('.search__window');
-
-//------------------------------------------------------------------------search
-
-
-
 
 
 //------------------------------------------------------------------------Меню-Бургер
@@ -118,36 +72,21 @@ document.addEventListener ('click', (e) => {
 //------------------------------------------------------------------------Прокрутка при клике
 
 //------------------------------------------------------------------------Слайдер
-//const mainSlider = document.querySelector('.main-slider');
-//if (mainSlider) {
-//  new Swiper(mainSlider, {
-//    direction: 'horizontal',
-//    loop: true,
-//    slidesPerView: 3,
-//    spaceBetween: 20,
-//    speed: 1000,
-//    autoHeight: false,
-//    navigation: {
-//      nextEl: '.swiper-button-next',
-//      prevEl: '.swiper-button-prev',
-//    },
-//    pagination: {
-//      el: '.swiper-pagination',
-//      clickable: true,
-//    },
-//    breakpoints: {
-//      320: {
-//        slidesPerView: 1,
-//      },
-//      640: {
-//        slidesPerView: 2,
-//      },
-//      980: {
-//        slidesPerView: 3,
-//      }
-//    }
-//  });
-//}
+const mainSlider = document.querySelector('.main-slider');
+if (mainSlider) {
+  new Swiper(mainSlider, {
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+    speed: 1000,
+    autoHeight: false,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+}
 //------------------------------------------------------------------------Слайдер
 
 

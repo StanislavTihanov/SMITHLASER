@@ -2,11 +2,17 @@
 .header {
     position: fixed;
     width: 100%;
+    z-index: 999;
+    padding-bottom: 16px;
+    background-color: var(--color-white);
+    @include table {
+        border-bottom: 1px solid #cacaca;
+    }
     &__content {
         position: relative;
     }
     &__top {
-       height: 44px;
+       height: 30px;
        @include table {
         display: none;
     }
@@ -23,18 +29,25 @@
         @include table {
             position: relative;
             display: block;
+            margin-bottom: 16px;
         }
     }
     &__box {
         display: flex;
         align-items: center;
         gap: 6px;
+        transition: all 0.3s ease 0s;
         address {
             margin-bottom: 0;
-
             span {
                 color: #8B8B8B;
             }
+        }
+        @include hover {
+            color: var(--color-red);
+        }
+        @include table {
+            margin-bottom: 10px;
         }
     }
     &__body {
@@ -43,9 +56,18 @@
         align-items: end;
         gap: 16px;
         margin: 16px 0px;
+        @include table {
+            gap: 8px;
+            align-items: center;
+            margin-bottom: 0px;
+        }
     }
     &__logo {
         z-index: 3; 
+        flex: none;
+        @include table {
+            width: 128px;
+        }
     }
     &__links {
         display: flex;
@@ -57,21 +79,167 @@
         right: 16px;
         gap: 16px;
         font-size: 12px;
+        a {
+            transition: all 0.3s ease 0s;
+            @include hover {
+                color: var(--color-red);
+            }
+        }
         @include table {
             position: relative;
             display: block;
-        }
-    }
-    &__link {
-        transition: All 0.5s ease 0s;
-        @include hover {
-            color: var(--color-black);
+            margin-bottom: 40px;
+            left: 16px;
+            & :first-child {
+                margin-bottom: 10px;
+            }
         }
     }
     &__bottom {
         display: flex;
         align-items: center;
-        gap: 14px;
+        gap: 30px;
     }
+    &__title {
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: -0.01em;
+        color: var(--color-red);
+    }
+    &__contacts {
+        margin-left: 16px;
+        display: none;
+        @include table {
+            display: block;
+        }
+    }
+    &__contact {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 12px;
+        &-icon {
+            background-color: var(--color-red);
+            padding: 4px;
+            border-radius: 12px;
+            height: 32px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &-links {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            margin-bottom: 5px;
+        }
+        &-box {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 150%;
+            letter-spacing: -0.01em;
+        }
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        flex: none;
+        @include table {
+            gap: 8px;
+        }
+    }
+    &__call {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: var(--color-red);
+        padding: 8px 25px;
+        white-space: nowrap;
+        color: var(--color-white);
+        border-radius: 16px;
+        transition: all 0.3s ease 0s;
+        flex: none;
+        @include hover {
+            background-color: #c41f25;
+        }
+        @include table {
+            padding: 6px;
+            border-radius: 12px;
+            span {
+                display: none;
+            }
+        }
+    }
+    &__icon {
+        height: 40px;
+        width: 40px;
+        display: flex;
+        align-items: center;
+        border: 1px solid #878787;
+        border-radius: 12px;
+        padding: 8px;
+        position: relative;
+        transition: all 0.3s ease 0s;
+        display: inline-block;
+        flex: none;
+        @include hover {
+            background-color: var(--color-red);
+            border: 1px solid var(--color-red);
+        }
+        @include table {
+            padding: 6px;
+            border-radius: 10px;
+            height: 38px;
+        }
+        &-numb {
+            position: absolute;
+            background-color: var(--color-red);
+            color: var(--color-white);
+            padding: 3px 4px;
+            border-radius: 50%;
+            bottom: 4px;
+            right: 4px;
+            font-weight: 700;
+            font-size: 10px;
+            line-height: 80%;
+            @include table {
+                bottom: 0;
+                right: 0;
+                padding: 4px 6px;
+            }
+        }
+        &--favourites {
+            @include table {
+                display: none;
+            }
+        }
+    }
+    &__catalog {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--color-red);
+        border-radius: 16px;
+        padding: 8px 48px;
+        border: 1px solid var(--color-red);
+        @include table {
+            display: none;
+        }
+    }
+}
+.massangers {
+    margin-left: 16px;
+    display: none;
+    @include table {
+        display: block;
+    }
+   &__wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 26px;
+}
 }
 /*----------------------------------header--------------------------------*/

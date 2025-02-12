@@ -4,13 +4,52 @@
     border-radius: 16px;
     padding: 8px 16px;
     flex-basis: 740px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    &__block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        &-close {
+            display: none;
+        }
+    }
+    @include table {
+        order: -1;
+    }
+    @include mobile {
+        border: none; 
+        flex-basis: 25px;
+        padding: 0px;
+        &._act {
+            flex-basis: 100%;
+        }
+        &._act .search__block {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 65px;
+            background-color: var(--color-white);
+            z-index: 9;
+            padding: 3px 10px 5px 0px;
+            &-close {
+                display: block;
+                position: relative;
+                z-index: 999;
+            }
+        }
+    }
     &__box {
         flex: none;
         z-index: 4;
     }
     &__label {
+        width: 100%;
         span {
             display: none;
+        }
+        img {
+            max-width: 20px;
         }
     }
     &__label_input {
@@ -26,9 +65,6 @@
         gap: 10px;
         color: var(--color-blue);
         font-size: 18px;
-    }
-    @include mtable {
- 
     }
 }
    

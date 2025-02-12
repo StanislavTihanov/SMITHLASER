@@ -19,17 +19,15 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-  <link rel="stylesheet" href="./styles/styles.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./styles/styles.css">
 </head>
 
 <body id="body">
   <div class="wrapper">
     <header class="header lock-padding">
         <div class="header__content _container">
-          <div class="header__top">
-              
-          </div>
+          <div class="header__top"></div>
           <div class="header__body">
             <div class="burger" id="hamb" aria-label="кнопка открытия меню">
               <span class="burger__line"></span>
@@ -46,40 +44,54 @@
                   <span>Найти</span>
                   <input class="search__label_input" type="text" placeholder="Поиск по товарам">
                 </label>
+                <div class="search__block-close">
+                  <img src="images/icons/close.svg" alt="search icon">
+                </div>
               </div>
             </div>
-            <a class="header__call" href="#!">
-              <img src="images/icons/tel-white.svg" alt="icon">
-              Заказать звонок
-            </a>
-            <a class="header__icon header__icon--favourites" href="#!">
-              <img src="images/icons/favourites.svg" alt="icon">
-              <div class="header__icon-numb">
-                <span>0</span>
-              </div>
-            </a>
-            <a class="header__icon" href="#!">
-              <img src="images/icons/icon-card.svg" alt="icon">
-              <div class="header__icon-numb">
-                <span>2</span>
-              </div>
-            </a>
+            <div class="header__inner">
+              <a class="header__call" href="#!">
+                <img src="images/icons/tel-white.svg" alt="icon">
+                <span>Заказать звонок</span>
+              </a>
+              <a class="header__icon header__icon--favourites" href="#!">
+                <img src="images/icons/favourites.svg" alt="icon">
+                <div class="header__icon-numb">
+                  <span>0</span>
+                </div>
+              </a>
+              <a class="header__icon" href="#!">
+                <img src="images/icons/icon-cart.svg" alt="icon">
+                <div class="header__icon-numb">
+                  <span>2</span>
+                </div>
+              </a>
+            </div>
           </div>
           <div class="header__bottom">
-            <a href="#!" class="header__catalog">Каталог</a>
+            <a href="#!" class="header__catalog">
+              <img src="images/icons/menu-02.svg" alt="menu">
+              Каталог
+            </a>
             <nav class="menu" id="menu">
+              <a class="menu__logo" href="index.html" aria-label="логотип">
+                <img src="images/icons/logo.svg" alt="logo">
+              </a>
+              <div class="menu__close">
+                <img src="images/icons/close.svg" alt="close">
+              </div>
               <ul>
                 <li>
-                  <a class="menu__link" data-goto=".reviews" href="#">Главная</a>
+                  <a class="menu__link" href="#!">Лазерные маркеры</a>
                 </li>
                 <li>
-                  <a class="menu__link" data-goto=".rates" href="#">О нас</a>
+                  <a class="menu__link" href="#!">Лазерная сварка и пайка</a>
                 </li>
                 <li>
-                  <a class="menu__link" data-goto=".about" href="#">Каталог</a>
+                  <a class="menu__link" href="#!">Лазерная очистка</a>
                 </li>
                 <li>
-                  <a class="menu__link" data-goto=".locations" href="#">Контакты</a>
+                  <a class="menu__link" href="#!">Блог</a>
                 </li>
               </ul>
               <div class="header__block">
@@ -101,25 +113,35 @@
                 <a href="#!">Контакты</a>
               </div>
               <div class="massangers">
-                <a href="#!">
-                  <img src="images/icons/vk.svg" alt="иконка вконтакте">
-                </a>
-                <a href="#!">
-                  <img src="images/icons/f.svg" alt="иконка фейсбука">
-                </a>
-                <a href="#!">
-                  <img src="images/icons/youtube.svg" alt="иконка ютуба">
-                </a>
-                <a href="#!">
-                  <img src="images/icons/inst.svg" alt="иконка инстаграма">
-                </a>
-                <a href="#!">
-                  <img src="images/icons/ok.svg" alt="иконка одноклассники">
-                </a>
+                <div class="header__title">
+                  <h2>Подпишись</h2>
+                </div>
+                <div class="massangers__wrapper">
+                  <a href="#!">
+                    <img src="images/icons/vk.svg" alt="иконка вконтакте">
+                  </a>
+                  <a href="#!">
+                    <img src="images/icons/f.svg" alt="иконка фейсбука">
+                  </a>
+                  <a href="#!">
+                    <img src="images/icons/youtube.svg" alt="иконка ютуба">
+                  </a>
+                  <a href="#!">
+                    <img src="images/icons/inst.svg" alt="иконка инстаграма">
+                  </a>
+                  <a href="#!">
+                    <img src="images/icons/ok.svg" alt="иконка одноклассники">
+                  </a>
+                </div>
               </div>
               <div class="header__contacts">
+                <div class="header__title">
+                  <h2>Контакты</h2>
+                </div>
                 <div class="header__contact">
-                  <img src="images/icons/icon-massenger.svg" alt="icon">
+                  <div class="header__contact-icon">
+                    <img src="images/icons/icon-massenger.svg" alt="icon">
+                  </div>
                   <div class="header__contact-inner">
                     <div class="header__contact-links">
                       <a href="#!">WhatsApp,</a>
@@ -132,10 +154,12 @@
                   </div>
                 </div>
                 <div class="header__contact">
-                  <img src="images/icons/icon-massenger.svg" alt="icon">
+                  <div class="header__contact-icon">
+                    <img src="images/icons/icon-email.svg" alt="icon">
+                  </div>
                   <div class="header__contact-inner">
                     <div class="header__contact-links">
-                      <p>Email (тех.поддержка)</p>
+                      <a href="mailto:info@smithlaser.ru">Email (тех.поддержка)</a>
                     </div>
                     <div class="header__contact-box">
                       <a href="mailto:info@smithlaser.ru">info@smithlaser.ru</a>
@@ -149,17 +173,199 @@
     </header>
 
     <main class="main">
-      <section class="main-section section">
-        <div class="main-section__content _container">
-          <div class="title">
-            <h1>Эталон2.0</h1>
+      <section class="main-section _container">
+        <div class="main-section__content">
+          <div class="main-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <div class="main-section__body">
+                  <div class="main-section__info">
+                    <div class="title">
+                      <h1>Лазерные маркеры <span>SMITHLASER</span></h1>
+                    </div>
+                    <p>маркировка по доступной цене</p>
+                    <a class="button button-filled" href="#!">
+                      Подробнее
+                      <img src="images/icons/arrow-narrow-right.svg" alt="arrow">
+                    </a>
+                  </div>
+                  <div class="main-section__image">
+                    <picture>
+                      <source media="(max-width: 450px)" srcset="images/main-section-img-mob.webp">
+                      <img src="images/main-section-img.webp" alt="image">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="main-section__body">
+                  <div class="main-section__info">
+                    <div class="title">
+                      <h1>Лазерные маркеры <span>SMITHLASER</span></h1>
+                    </div>
+                    <p>маркировка по доступной цене</p>
+                    <a class="button button-filled" href="#!">
+                      Подробнее
+                      <img src="images/icons/arrow-narrow-right.svg" alt="arrow">
+                    </a>
+                  </div>
+                  <div class="main-section__image">
+                    <picture>
+                      <source media="(max-width: 450px)" srcset="images/main-section-img-mob.webp">
+                      <img src="images/main-section-img.webp" alt="image">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="main-section__body">
+                  <div class="main-section__info">
+                    <div class="title">
+                      <h1>Лазерные маркеры <span>SMITHLASER</span></h1>
+                    </div>
+                    <p>маркировка по доступной цене</p>
+                    <a class="button button-filled" href="#!">
+                      Подробнее
+                      <img src="images/icons/arrow-narrow-right.svg" alt="arrow">
+                    </a>
+                  </div>
+                  <div class="main-section__image">
+                    <picture>
+                      <source media="(max-width: 450px)" srcset="images/main-section-img-mob.webp">
+                      <img src="images/main-section-img.webp" alt="image">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-slide">
+                <div class="main-section__body">
+                  <div class="main-section__info">
+                    <div class="title">
+                      <h1>Лазерные маркеры <span>SMITHLASER</span></h1>
+                    </div>
+                    <p>маркировка по доступной цене</p>
+                    <a class="button button-filled" href="#!">
+                      Подробнее
+                      <img src="images/icons/arrow-narrow-right.svg" alt="arrow">
+                    </a>
+                  </div>
+                  <div class="main-section__image">
+                    <picture>
+                      <source media="(max-width: 450px)" srcset="images/main-section-img-mob.webp">
+                      <img src="images/main-section-img.webp" alt="image">
+                    </picture>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
           </div>
-          <picture>
-            <source media="(max-width: 390px)" srcset="images/test.webp">
-            <source media="(max-width: 768px)" srcset="images/test.webp">
-            <source media="(min-width: 1920px)" srcset="images/test.webp">
-            <img src="images/test.webp" alt="image">
-          </picture>
+          <div class="main-secrion__bg _ibg">
+            <picture>
+              <source media="(max-width: 550px)" srcset="images/main-bg-mob.webp">
+              <img src="images/main-bg.webp" alt="image">
+            </picture>
+          </div>
+        </div>
+        <div class="main-section__blocks">
+          <div class="main-section__block">
+            <a class="main-section__item main-section__item--1" href="#!">
+              <div class="main-section__item-title">
+                <h3>Лазерные маркеры</h3>
+              </div>
+              <div class="main-section__item-img">
+                <img src="images/block-img1.webp" alt="Лазерные маркеры">
+             </div>
+            </a>
+          </div>
+          <div class="main-section__block-one">
+            <a class="main-section__item main-section__item--2" href="#!">
+              <div class="main-section__item-img">
+                <img src="images/block-img2.webp" alt="Лазерные маркеры">
+              </div>
+              <div class="main-section__item-title">
+                <h3>Лазерная сварка и пайка</h3>
+              </div>
+            </a>
+            <a class="main-section__item main-section__item--3" href="#!">
+              <div class="main-section__item-img">
+                <img src="images/block-img3.webp" alt="Лазерные маркеры">
+              </div>
+              <div class="main-section__item-title">
+                <h3>Лазерная очистка</h3>
+              </div>
+            </a>
+            <a class="main-section__item main-section__item--4" href="#!">
+              <div class="main-section__item-title">
+                <h3>Лазерные станки</h3>
+              </div>
+              <div class="main-section__item-img">
+                <img src="images/block-img4.webp" alt="Лазерные маркеры">
+             </div>
+            </a>
+          </div>
+          <div class="main-section__block-two">
+            <a class="main-section__item main-section__item--5" href="#!">
+              <div class="main-section__item-img">
+                <img src="images/block-img5.webp" alt="Лазерные маркеры">
+              </div>
+              <div class="main-section__item-title">
+                <h3>Лазерные станки по металлу</h3>
+              </div>
+              <span class="main-section__item-soon">СКОРО</span>
+            </a>
+            <a class="main-section__item main-section__item--6" href="#!">
+              <div class="main-section__item-title">
+                <h3>Фрезерные станки</h3>
+              </div>
+              <div class="main-section__item-img">
+                <img src="images/block-img6.webp" alt="Лазерные маркеры">
+              </div>
+              <span class="main-section__item-soon">СКОРО</span>
+            </a>
+            <a class="main-section__item main-section__item--7" href="#!">
+              <div class="main-section__item-img">
+                <img src="images/block-img7.webp" alt="Лазерные маркеры">
+              </div>
+              <div class="main-section__item-title">
+                <h3>Станки для резки труб</h3>
+              </div>
+              <span class="main-section__item-soon">СКОРО</span>
+            </a>
+            <a class="main-section__item main-section__item--8" href="#!">
+              <div class="main-section__item-img">
+                <img src="images/block-img8.webp" alt="Лазерные маркеры">
+              </div>
+              <div class="main-section__item-title">
+                <h3>Комплектующие</h3>
+              </div>
+              <span class="main-section__item-soon">СКОРО</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section">
+        <div class="about__content _container">
+          <div class="subtitle">
+            <h2>Компания <span>SMITHLASER</span></h2>
+          </div>
+          <div class="about__body">
+            <div class="about__info">
+              <h3>О компании</h3>
+              <p>Наша компания, <span>SMITHLASER</span>, основана в 2009 году. Основной вид деятельности – поставка покупателям на всей территории РФ качественных надежных лазерных станков. Осуществляем пусконаладочные работы, обучение сотрудников (как очное, так и дистанционное), 
+                и ремонт и техобслуживание оборудования.</p>
+            </div>
+            <div class="about-slider">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="" alt="img">
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-button-next"></div>
+            </div>
+          </div>
         </div>
       </section>
 
