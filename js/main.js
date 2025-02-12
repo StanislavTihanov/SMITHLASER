@@ -87,6 +87,23 @@ if (mainSlider) {
     },
   });
 }
+const aboutSlider = document.querySelector('.about-slider');
+if (aboutSlider) {
+  new Swiper(aboutSlider, {
+    direction: 'horizontal',
+    loop: true,
+    slidesPerView: 2,
+    speed: 1000,
+    autoHeight: false,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+    },
+  });
+}
 //------------------------------------------------------------------------Слайдер
 
 

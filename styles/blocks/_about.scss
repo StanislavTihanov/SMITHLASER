@@ -1,0 +1,81 @@
+/*----------------------------------about--------------------------------*/
+
+.about {
+     background-color: var(--color-gray);
+     &__content {
+        max-width: 1150px;
+        margin: auto;
+        padding: 0px 16px;
+     }
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        @include mobile {
+            flex-wrap: wrap;
+        }
+    }
+    &__info {
+        flex-basis: 470px;
+        h3 {
+            font-weight: 700;
+            @include fluid-text(20, 24);
+            line-height: 133%;
+            margin-bottom: 16px;
+        }
+        p {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+        }
+        @include mobile {
+            order: 1;
+        }
+    }
+    &__slider {
+        min-width: 0;
+        flex-basis: 650px;
+    }
+}
+.about-slider {
+    height: 424px;
+    margin-bottom: -100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include mobile {
+        margin-bottom: 0px;
+    }
+}
+
+.about-slider .swiper-slide {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.about-slider .swiper-slide img {
+    width: 230px;
+    transform: scale(1);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    opacity: 0.4;
+    transform-origin: center;
+}
+.about-slider .swiper-slide.swiper-slide-active img {
+    transform: scale(1.75);
+    opacity: 1;
+    @include table {
+        transform: scale(1.2);
+    }
+}
+.about-slider .swiper-button-next {
+    right: 30px;
+    background-color: var(--color-black);
+    width: 42px;
+    border-radius: 50%;
+}
+
+
+
+/*----------------------------------about--------------------------------*/

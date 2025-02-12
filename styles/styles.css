@@ -1048,6 +1048,95 @@ body {
 }
 
 /*----------------------------------main-section--------------------------------*/
+/*----------------------------------about--------------------------------*/
+.about {
+  background-color: var(--color-gray);
+}
+.about__content {
+  max-width: 1150px;
+  margin: auto;
+  padding: 0px 16px;
+}
+.about__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .about__body {
+    flex-wrap: wrap;
+  }
+}
+.about__info {
+  flex-basis: 470px;
+}
+.about__info h3 {
+  font-weight: 700;
+  font-size: clamp(20px, 1.6666666667vw, 24px);
+  line-height: 133%;
+  margin-bottom: 16px;
+}
+.about__info p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+}
+@media (max-width: 768px) {
+  .about__info {
+    order: 1;
+  }
+}
+.about__slider {
+  min-width: 0;
+  flex-basis: 650px;
+}
+
+.about-slider {
+  height: 424px;
+  margin-bottom: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .about-slider {
+    margin-bottom: 0px;
+  }
+}
+
+.about-slider .swiper-slide {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.about-slider .swiper-slide img {
+  width: 230px;
+  transform: scale(1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0.4;
+  transform-origin: center;
+}
+
+.about-slider .swiper-slide.swiper-slide-active img {
+  transform: scale(1.75);
+  opacity: 1;
+}
+@media (max-width: 1024px) {
+  .about-slider .swiper-slide.swiper-slide-active img {
+    transform: scale(1.2);
+  }
+}
+
+.about-slider .swiper-button-next {
+  right: 30px;
+  background-color: var(--color-black);
+  width: 42px;
+  border-radius: 50%;
+}
+
+/*----------------------------------about--------------------------------*/
 /*----------------------------------card--------------------------------*/
 .card {
   height: 100%;
@@ -1117,43 +1206,41 @@ body {
 /*----------------------------------blockquote--------------------------------*/
 /*----------------------------------blockquote--------------------------------*/
 /*---------------------------------------sliders----------------------------*/
-.main-slider {
+.main-slider,
+.about-slider {
   overflow: hidden;
   position: relative;
 }
 
 /*---------------------------------------параметры чтобы слайды имели одинаковую высоту----------------------------*/
-.swiper-wrapper {
+.about-slider .swiper-wrapper {
   display: flex;
-  align-items: stretch;
+  align-items: center;
 }
 
-.swiper-slide {
+.about-slider .swiper-slide {
   height: auto;
 }
 
 /*---------------------------------------параметры чтобы слайды имели одинаковую высоту----------------------------*/
-.swiper-button-next,
-.swiper-button-prev {
-  top: 50%;
+.about-slider .swiper-pagination {
+  position: absolute;
 }
 
-.swiper-button-next {
-  right: 16px;
-}
-
-.swiper-button-prev {
-  left: 16px;
-}
-
-.swiper-button-next::after,
-.swiper-button-prev::after {
-  font-size: 20px;
-  color: var(--color-white);
-  border: 1px solid var(--color-white);
-  padding: 16px 20px;
-  border-radius: 16px;
+.about-slider .swiper-button-next {
+  right: 30px;
   background-color: var(--color-black);
+  width: 42px;
+  border-radius: 50%;
+}
+@media (max-width: 768px) {
+  .about-slider .swiper-button-next {
+    display: none;
+  }
+}
+
+.swiper-button-next::after {
+  display: none;
 }
 
 .main-slider .swiper-pagination-bullet {
