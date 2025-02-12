@@ -2,21 +2,47 @@
 .header {
     position: fixed;
     width: 100%;
-    &__bg {
-        background-color: var(--color-blue);
-        transition: all 0.3s ease 0s;
-        .header__content {
-            color: var(--color-white);
+    &__content {
+        position: relative;
+    }
+    &__top {
+       height: 44px;
+       @include table {
+        display: none;
+    }
+    }
+    &__block {
+        position: absolute;
+        top: 16px;
+        left: 16px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        font-size: 12px;
+        @include table {
+            position: relative;
+            display: block;
+        }
+    }
+    &__box {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        address {
+            margin-bottom: 0;
+
+            span {
+                color: #8B8B8B;
+            }
         }
     }
     &__body {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
-        padding: 12px 10px;
-        max-width: var(--container-width);
-        margin: 0 auto;
+        align-items: end;
+        gap: 16px;
+        margin: 16px 0px;
     }
     &__logo {
         z-index: 3; 
@@ -26,8 +52,15 @@
         justify-content: center;
         align-items: center;
         flex-wrap: wrap;
+        position: absolute;
+        top: 16px;
+        right: 16px;
         gap: 16px;
-        @include fluid-text(12, 16);
+        font-size: 12px;
+        @include table {
+            position: relative;
+            display: block;
+        }
     }
     &__link {
         transition: All 0.5s ease 0s;
@@ -35,6 +68,10 @@
             color: var(--color-black);
         }
     }
+    &__bottom {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
 }
-
 /*----------------------------------header--------------------------------*/

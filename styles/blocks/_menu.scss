@@ -17,13 +17,13 @@
             color: var(--color-black);
         }
     }
-    @include mobile {
+    @include table{
         position: fixed;
         left: 0;
         top: -100%;
         width: 100%;
         height: 100%;
-        background: blueviolet;
+        background: var(--color-white);
         padding: 100px 30px 30px 30px; 
         transition: All 0.5s ease 0s;
         overflow: auto;
@@ -38,7 +38,6 @@
             display: block;
             text-align: center;
             position: relative;
-            color: var(--color-white);
         }
         ul li {
             margin-bottom: 20px;

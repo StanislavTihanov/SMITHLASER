@@ -56,23 +56,8 @@ window.addEventListener('scroll', () => {
 
 
 //------------------------------------------------------------------------search
-//const searchButtons = document.querySelectorAll('.search__btn');
-//const searchWindows = document.querySelectorAll('.search__window');
-//
-//searchButtons.forEach((searchBtn, index) => {
-//  const searchWindow = searchWindows[index]; // Привязываем соответствующее окно к каждой кнопке
-//
-//  searchBtn.addEventListener("click", function (e) {
-//    e.stopPropagation();
-//    searchWindow.classList.toggle('_act'); // Открываем/закрываем конкретное окно поиска
-//  });
-//
-//  document.addEventListener("click", function (e) {
-//    if (!searchBtn.contains(e.target) && !searchWindow.contains(e.target)) {
-//      searchWindow.classList.remove('_act'); // Закрываем окно, если клик вне кнопки или окна
-//    }
-//  });
-//});
+const searchButtons = document.querySelectorAll('.search__btn');
+const searchWindows = document.querySelectorAll('.search__window');
 
 //------------------------------------------------------------------------search
 
@@ -433,12 +418,23 @@ document.addEventListener ('click', (e) => {
 //  const forms = document.querySelectorAll('form'); // Получаем все формы на странице
 //
 //  forms.forEach((form) => {
-//    const phoneInput = form.querySelector('._number'); // Поле ввода телефона
-//
-//    // Добавляем маску для номера телефона
-//    if (phoneInput) {
-//      Inputmask("+7 (999) 999-99-99").mask(phoneInput);
-//    }
+//      const phoneInputs = document.querySelectorAll('._number');
+//    
+//      phoneInputs.forEach((phoneInput) => {
+//        const mask = IMask(phoneInput, { mask: '+7 (000) 000-00-00' });
+//    
+//        phoneInput.addEventListener('focus', () => {
+//          if (!phoneInput.value) {
+//            mask.value = '+7() ';
+//          }
+//        });
+//    
+//        phoneInput.addEventListener('blur', () => {
+//          if (mask.unmaskedValue.length < 2) {
+//            mask.value = '';
+//          }
+//        });
+//      });
 //
 //    form.addEventListener('submit', formSend);
 //
@@ -580,5 +576,8 @@ document.addEventListener ('click', (e) => {
 //    }
 //  });
 //});
-//
-//------------------------------------------------------------------------Обработка формы
+////------------------------------------------------------------------------Обработка форм
+
+////------------------------------------------------------------------------настройка карты
+
+////------------------------------------------------------------------------настройка карты
