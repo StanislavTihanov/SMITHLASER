@@ -114,6 +114,123 @@ if (aboutSlider) {
 }
 //------------------------------------------------------------------------Слайдер
 
+//----------------------------------------------------------------------фильтр
+
+document.addEventListener("DOMContentLoaded", function () {
+  let slider1 = document.getElementById('slider1');
+  let minInput = document.getElementById('minInput1');
+  let maxInput = document.getElementById('maxInput1');
+
+  if (slider1 && minInput && maxInput) {
+      noUiSlider.create(slider1, {
+          start: [10000, 90000], // Начальные значения ползунка (но не input)
+          connect: true,
+          range: {
+              'min': 1,
+              'max': 100000
+          },
+          step: 1,
+          format: {
+              to: value => Math.round(value),
+              from: value => Number(value)
+          }
+      });
+      // Очищаем input после создания слайдера
+      setTimeout(() => {
+          minInput.value = "";
+          maxInput.value = "";
+      }, 0);
+      // Обновление input при изменении ползунка (значения появляются только после движения)
+      slider1.noUiSlider.on('update', function (values, handle) {
+          if (handle === 0 && document.activeElement !== minInput) {
+              minInput.value = values[0];
+          }
+          if (handle === 1 && document.activeElement !== maxInput) {
+              maxInput.value = values[1];
+          }
+      });
+      // Обновление ползунка при вводе значений вручную
+      minInput.addEventListener('change', function () {
+          slider1.noUiSlider.set([this.value || 1, null]);
+      });
+
+      maxInput.addEventListener('change', function () {
+          slider1.noUiSlider.set([null, this.value || 100]);
+      });
+  }
+});
+document.addEventListener("DOMContentLoaded", function () {
+  let slider2 = document.getElementById('slider2');
+  let minInput = document.getElementById('minInput2');
+  let maxInput = document.getElementById('maxInput2');
+
+  if (slider2 && minInput && maxInput) {
+      noUiSlider.create(slider2, {
+          start: [50, 450], // Начальные значения ползунка (но не input)
+          connect: true,
+          range: {
+              'min': 1,
+              'max': 500
+          },
+          step: 1,
+          format: {
+              to: value => Math.round(value),
+              from: value => Number(value)
+          }
+      });
+      // Очищаем input после создания слайдера
+      setTimeout(() => {
+          minInput.value = "";
+          maxInput.value = "";
+      }, 0);
+      // Обновление input при изменении ползунка (значения появляются только после движения)
+      slider2.noUiSlider.on('update', function (values, handle) {
+          if (handle === 0 && document.activeElement !== minInput) {
+              minInput.value = values[0];
+          }
+          if (handle === 1 && document.activeElement !== maxInput) {
+              maxInput.value = values[1];
+          }
+      });
+      // Обновление ползунка при вводе значений вручную
+      minInput.addEventListener('change', function () {
+          slider2.noUiSlider.set([this.value || 1, null]);
+      });
+
+      maxInput.addEventListener('change', function () {
+          slider2.noUiSlider.set([null, this.value || 100]);
+      });
+  }
+});
+//----------------------------------------------------------------------фильтр
+
+const titles = document.querySelectorAll('.accordion__title');
+
+titles.forEach(item => {
+    const activeContent = document.querySelector('#' + item.dataset.tab);
+
+    // Изначально делаем активными все элементы
+    item.classList.add('active');
+    activeContent.classList.add('active');
+    activeContent.style.maxHeight = activeContent.scrollHeight + 'px';
+
+    // Добавляем обработчик клика
+    item.addEventListener('click', () => {
+        if (activeContent.classList.contains('active')) {
+            activeContent.classList.remove('active');
+            item.classList.remove('active');
+            activeContent.style.maxHeight = 0;
+        } else {
+            item.classList.add('active');
+            activeContent.classList.add('active');
+            activeContent.style.maxHeight = activeContent.scrollHeight + 'px';
+        }
+    });
+});
+
+
+
+
 
 //-----------------------------------------------------------------------сортировка по атрибутам
 
@@ -378,168 +495,101 @@ if (aboutSlider) {
 //------------------------------------------------------------------------Animation
 
 //------------------------------------------------------------------------Обработка формы
-//document.addEventListener('DOMContentLoaded', function () {
-//  const forms = document.querySelectorAll('form'); // Получаем все формы на странице
-//
-//  forms.forEach((form) => {
-//      const phoneInputs = document.querySelectorAll('._number');
-//    
-//      phoneInputs.forEach((phoneInput) => {
-//        const mask = IMask(phoneInput, { mask: '+7 (000) 000-00-00' });
-//    
-//        phoneInput.addEventListener('focus', () => {
-//          if (!phoneInput.value) {
-//            mask.value = '+7() ';
-//          }
-//        });
-//    
-//        phoneInput.addEventListener('blur', () => {
-//          if (mask.unmaskedValue.length < 2) {
-//            mask.value = '';
-//          }
-//        });
-//      });
-//
-//    form.addEventListener('submit', formSend);
-//
-//    async function formSend(e) {
-//      e.preventDefault();
-//
-//      let error = formValidate(form);
-//      let formData = new FormData(form);
-//
-//      const formImage = form.querySelector('#formImage');
-//      if (formImage && formImage.files[0]) {
-//        formData.append('image', formImage.files[0]);
-//      }
-//
-//      if (error === 0) {
-//        form.classList.add('_sending');
-//        let response = await fetch('send.php', {
-//          method: 'POST',
-//          body: formData
-//        });
-//
-//      if (response.ok) {
-//        let result = await response.json();
-//        
-//        // Закрытие формы (например, скрытие через класс)
-//        form.style.display = 'none';
-//        
-//        // Добавляем сообщение об успешной отправке
-//        const successMessage = document.createElement('div');
-//        successMessage.classList.add('success-message'); // Добавляем класс для стилизации
-//        successMessage.textContent = 'Форма успешно отправлена! Спасибо за ваш отклик.';
-//        form.parentElement.appendChild(successMessage); // Добавляем сообщение в контейнер формы
-//        
-//        const formPreview = form.querySelector('#formPreview');
-//        if (formPreview) {
-//          formPreview.innerHTML = '';
-//        }
-//        form.reset();
-//        form.classList.remove('_sending');
-//      } else {
-//        showErrorMessage('Ошибка при отправке формы');
-//        form.classList.remove('_sending');
-//      }
-//      }
-//    }
-//
-//    function formValidate(form) {
-//      let error = 0;
-//      let formReq = form.querySelectorAll('._req');
-//
-//      formReq.forEach((input) => {
-//        formRemoveError(input);
-//
-//        if (input.classList.contains('_email')) {
-//          if (!emailTest(input)) { // проверка на корректность email
-//            formAddError(input);
-//            error++;
-//          }
-//        } else if (input.classList.contains('_number')) {
-//          if (!phoneTest(input)) { // проверка на корректность телефона
-//            formAddError(input);
-//            error++;
-//          }
-//        } else if (input.getAttribute('type') === "checkbox" && input.checked === false) {
-//          formAddError(input);
-//          error++;
-//        } else {
-//          if (input.value === '') {
-//            formAddError(input);
-//            error++;
-//          }
-//        }
-//      });
-//      return error;
-//    }
-//
-//    function formAddError(input) {
-//      input.parentElement.classList.add('_error');
-//      input.classList.add('_error');
-//    
-//      // Ищем элемент с классом form__error внутри контейнера родителя
-//      const errorSpan = input.parentElement.querySelector('.form__error');
-//      if (errorSpan) {
-//        errorSpan.classList.add('view'); // Добавляем класс view
-//      }
-//    }
-//    
-//    function formRemoveError(input) {
-//      input.parentElement.classList.remove('_error');
-//      input.classList.remove('_error');
-//    
-//      // Ищем элемент с классом form__error внутри контейнера родителя
-//      const errorSpan = input.parentElement.querySelector('.form__error');
-//      if (errorSpan) {
-//        errorSpan.classList.remove('view'); // Удаляем класс view
-//      }
-//    }
-//    
-//    // проверка email
-//    function emailTest(input) {
-//      return /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/.test(input.value);
-//    }
-//
-//    // проверка телефона
-//    function phoneTest(input) {
-//      return /^\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}$/.test(input.value);
-//    }
-//
-//    // Работа с изображением
-//    const formImage = form.querySelector('#formImage');
-//    const formPreview = form.querySelector('#formPreview');
-//
-//    if (formImage) {
-//      formImage.addEventListener('change', () => {
-//        uploadFile(formImage.files[0]);
-//      });
-//
-//      function uploadFile(file) {
-//        if (!['image/jpeg', 'image/png', 'image/gif'].includes(file.type)) {
-//          showErrorMessage('Только изображения');
-//          formImage.value = '';
-//          return;
-//        }
-//        if (file.size > 2 * 1024 * 1024) {
-//          showErrorMessage('Файл должен быть менее 2 МБ');
-//          return;
-//        }
-//        let reader = new FileReader();
-//        reader.onload = function (e) {
-//          if (formPreview) {
-//            formPreview.innerHTML = `<img src="${e.target.result}" alt="Фото">`;
-//          }
-//        };
-//        reader.onerror = function (e) {
-//          showErrorMessage('Ошибка загрузки изображения');
-//        };
-//        reader.readAsDataURL(file);
-//      }
-//    }
-//  });
-//});
+document.addEventListener('DOMContentLoaded', function () {
+  const forms = document.querySelectorAll('form'); // Получаем все формы на странице
+
+  forms.forEach((form) => {
+      const phoneInputs = document.querySelectorAll('._number');
+    
+      phoneInputs.forEach((phoneInput) => {
+        const mask = IMask(phoneInput, { mask: '+7 (000) 000-00-00' });
+    
+        phoneInput.addEventListener('focus', () => {
+          if (!phoneInput.value) {
+            mask.value = '+7() ';
+          }
+        });
+    
+        phoneInput.addEventListener('blur', () => {
+          if (mask.unmaskedValue.length < 2) {
+            mask.value = '';
+          }
+        });
+      });
+
+    form.addEventListener('submit', formSend);
+
+    async function formSend(e) {
+      e.preventDefault();
+
+      let error = formValidate(form);
+      let formData = new FormData(form);
+
+      const formImage = form.querySelector('#formImage');
+      if (formImage && formImage.files[0]) {
+        formData.append('image', formImage.files[0]);
+      }
+      if (error === 0) {
+        form.classList.add('_sending');
+      }
+    }
+
+    function formValidate(form) {
+      let error = 0;
+      let formReq = form.querySelectorAll('._req');
+
+      formReq.forEach((input) => {
+        formRemoveError(input);
+
+        if (input.classList.contains('_email')) {
+
+        } else if (input.classList.contains('_number')) {
+          if (!phoneTest(input)) { // проверка на корректность телефона
+            formAddError(input);
+            error++;
+          }
+        } else if (input.getAttribute('type') === "checkbox" && input.checked === false) {
+          formAddError(input);
+          error++;
+        } else {
+          if (input.value === '') {
+            formAddError(input);
+            error++;
+          }
+        }
+      });
+      return error;
+    }
+
+    function formAddError(input) {
+      input.parentElement.classList.add('_error');
+      input.classList.add('_error');
+    
+      // Ищем элемент с классом form__error внутри контейнера родителя
+      const errorSpan = input.parentElement.querySelector('.form__error');
+      if (errorSpan) {
+        errorSpan.classList.add('view'); // Добавляем класс view
+      }
+    }
+    
+    function formRemoveError(input) {
+      input.parentElement.classList.remove('_error');
+      input.classList.remove('_error');
+    
+      // Ищем элемент с классом form__error внутри контейнера родителя
+      const errorSpan = input.parentElement.querySelector('.form__error');
+      if (errorSpan) {
+        errorSpan.classList.remove('view'); // Удаляем класс view
+      }
+    }
+    
+    // проверка телефона
+    function phoneTest(input) {
+      return /^\+7\s\(\d{3}\)\s\d{3}-\d{2}-\d{2}$/.test(input.value);
+    }
+
+  });
+});
 ////------------------------------------------------------------------------Обработка форм
 
 ////------------------------------------------------------------------------настройка карты

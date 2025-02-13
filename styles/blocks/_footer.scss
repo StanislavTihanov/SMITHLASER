@@ -1,8 +1,96 @@
 /*----------------------------------footer--------------------------------*/
 .footer {
-    padding: 20px 0px;
+    padding: 24px 0px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+    font-weight: 400;
+    &__logo {
+        margin-bottom: 24px;
+    }
     &__body {
+        display: flex;
+        justify-content: space-between;
         gap: 10px;
+        border-bottom: 1px solid #484848;
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+        @include table {
+            flex-wrap: wrap;
+        }
+    }
+    &__inner {
+        flex-basis: 840px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        .footer__block:not(:last-child) {
+            border-right: 1px solid #484848;
+            padding-right: 120px;
+            @include table {
+                padding-right: 80px;
+            }
+            @include mobile {
+                padding-right: 20px;
+            }
+        }
+        @include mobile {
+            flex-wrap: wrap;
+            .footer__block:nth-child(2) {
+                border-right: none;
+            }
+        }
+    }
+    &__block {
+        h2 {
+            font-size: 16px;
+            line-height: 150%;
+            letter-spacing: -0.01em;
+            color: var(--color-red);
+            margin-bottom: 16px;
+        }
+        ul li {
+            margin-bottom: 16px;
+            transition: all 0.3s ease 0s;
+            @include hover {
+                color: var(--color-red);
+            }
+        }
+    }
+    &__bottom {
+        text-align: center;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 133%;
+        letter-spacing: -0.01em;
+    }
+    &__links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+        a {
+            transition: all 0.3s ease 0s;
+            @include hover {
+                color: var(--color-red);
+            }
+        }
+        a:not(:last-child) {
+            border-right: 1px solid #484848;
+            padding-right: 24px;
+            @include mobile {
+                border-right: none;
+                padding-right: 0px;
+            }
+        }
+        @include mobile {
+            flex-wrap: wrap;
+            gap: 16px 50px;
+            a {
+                border-bottom: 1px solid #484848;
+                padding-bottom: 10px;
+            }
+        }
     }
 }
 

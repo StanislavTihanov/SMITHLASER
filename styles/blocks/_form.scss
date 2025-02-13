@@ -1,34 +1,39 @@
 /*----------------------------------form--------------------------------*/
 .form {
-    max-width: 600px;
+    max-width: 670px;
     margin: 0 auto;
     color: var(--color-black);
-    padding: 20px;
-    background-color: var(--color-white);
     border-radius: 5px;
     margin-bottom: 16px;
     position: relative;
-    &._sending::after {
-        opacity: 1;
-        visibility: visible;
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 16px;
+        @include mobile {
+            flex-wrap: wrap;
+        }
+    }
+    &__item {
+        @include mobile {
+            width: 100%;
+         }
     }
     &__label {
-        font-size: 16px;
+        font-size: 14px;
         display: block;
         margin-bottom: 10px;
     }
-    &__input,
-    &__textarea {
+    &__input {
         width: 100%;
-        background-color: #f1d5f9;
-        padding: 10px;
-        border-radius: 5px;
+        padding: 10px 16px;
         transition: all 0.3s ease 0s;
-        &:focus {
-            box-shadow: 0 0 15px var(--color-blue);
-        }
+        border: 1px solid #c8c8c8;
+        border-radius: 16px;
         &._error {
-            border: 1px solid red;
+            border: 1px solid var(--color-red);
         }
     }
     &__error {
@@ -44,43 +49,57 @@
         margin-bottom: 16px;
     }
     &__button {
-        width: 100%;
-        padding: 16px;
-        background-color: var(--color-blue);
+        width: 196px;
+        padding: 10px;
+        background-color: var(--color-red);
         cursor: pointer;
         color: var(--color-white);
-        border-radius: 5px;
-        font-weight: 700;
-        font-size: 20px;
+        border-radius: 16px;
+        font-weight: 500;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        @include hover {
+            background-color: #c41f25;
+        }
+        @include mobile {
+            width: 100%;
+        }
+    }
+    .checkbox__text {
+        display: flex;
+        gap: 5px;
+        font-style: italic;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 133%;
+        a {
+            text-decoration: underline;
+        }
+        @include mobile {
+            flex-wrap: wrap;
+        }
     }
 }
-.file {
-    &__item {
-        position: relative;
+.section-form {
+    &__wrapper {
+        background-color: var(--color-gray);
+        padding: 32px 16px;
+        border-radius: 40px;
+        @include mobile {
+            border-radius: 24px;
+        }
     }
-    &__input {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        font-size: 0;
-        cursor: pointer;
-    }
-    &__button {
-        background-color: var(--color-blue);
-        color: var(--color-white);
-        display: inline-flex;
-        padding: 5px;
-        border-radius: 5px;
-    }
-    &__preview {
-        display: inline-block;
-        max-width: 100px;
-        margin-top: 16px;
-        img {
-            width: 100%;
+    &__email {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        font-weight: 700;
+        @include fluid-text(16, 20);
+        line-height: 120%;
+        a {
+            display: inline-block;
+            color: var(--color-red);
         }
     }
 }

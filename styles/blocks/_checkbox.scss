@@ -1,13 +1,18 @@
 /*----------------------------------checkbox--------------------------------*/
 .checkbox {
-    display: inline-block;
+    display: block;
+    margin-bottom: 16px;
     &._error .checkbox__label::before {
         border: 1px solid red;
     }
     &__input {
         display: none;
+        transition: transform 0.2s ease-in-out;
         &:checked + .checkbox__label::after {
             transform: rotate(45deg) scale(1);
+        }
+        &:checked + .checkbox__label::before {
+            background-color: var(--color-black);
         }
     }
     &__label {
@@ -18,7 +23,7 @@
         width: 100%;
         position: relative;
         cursor: pointer;
-        
+        font-weight: 500;
         &__text {
             display: flex;
             justify-content: space-between;
@@ -29,25 +34,24 @@
         &::before {
             content: '';
             align-self: flex-start;
-            flex: 0 0 16px;
-            height: 16px;
+            flex: 0 0 24px;
+            height: 24px;
             margin-right: 10px;
-            border: 1px solid #c4c4c4;
-            border-radius: 2px;
-            background: #fff;
+            border: 1px solid #c8c8c8;
+            border-radius: 8px;
+            background: var(--color-white);
             position: relative;
         }
         &::after {
             content: '';
             position: absolute;
-            width: 6px;
+            width: 8px;
             height: 12px;
-            border: solid violet;
+            border: solid var(--color-white);
             border-width: 0 2px 2px 0;
-            top: 0;
-            left: 5px;
+            top: 4px;
+            left: 8px;
             transform: rotate(45deg) scale(0);
-            transition: transform 0.2s ease-in-out;
         }
     }
 }

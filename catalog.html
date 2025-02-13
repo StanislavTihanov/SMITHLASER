@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="эталон">
+  <meta name="keywords" content="эталон">
+  <meta property="og:title" content="эталон">
+  <meta property="og:url" content="ссылка на сайт">
+  <meta property="og:image:width" content="1000">
+  <meta property="og:image:height" content="500">
+  <meta property="og:description" content="эталон">
+  <meta property="og:image" content="путь к картинке/image.webp">
+  <title>Эталон</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+
+<body id="body">
+  <div class="wrapper">
+    <header class="header lock-padding">
+        <div class="header__content _container">
+          <div class="header__top"></div>
+          <div class="header__body">
+            <div class="burger" id="hamb" aria-label="кнопка открытия меню">
+              <span class="burger__line"></span>
+              <span class="burger__line"></span>
+              <span class="burger__line"></span>
+            </div>
+            <a class="header__logo" href="index.html" aria-label="логотип">
+              <img src="images/icons/logo.svg" alt="logo">
+            </a>
+            <div class="search">
+              <div class="search__block">
+                <label class="search__label">
+                  <img src="images/icons/icon-search.svg" alt="search icon">
+                  <span>Найти</span>
+                  <input class="search__label_input" type="text" placeholder="Поиск по товарам">
+                </label>
+                <div class="search__block-close">
+                  <img src="images/icons/close.svg" alt="search icon">
+                </div>
+              </div>
+            </div>
+            <div class="header__inner">
+              <a class="header__call" href="#!">
+                <img src="images/icons/tel-white.svg" alt="icon">
+                <span>Заказать звонок</span>
+              </a>
+              <a class="header__icon header__icon--favourites" href="#!">
+                <img src="images/icons/favourites.svg" alt="icon">
+                <div class="header__icon-numb">
+                  <span>0</span>
+                </div>
+              </a>
+              <a class="header__icon" href="#!">
+                <img src="images/icons/icon-cart.svg" alt="icon">
+                <div class="header__icon-numb">
+                  <span>2</span>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="header__bottom">
+            <a href="#!" class="header__catalog">
+              <img src="images/icons/menu-02.svg" alt="menu">
+              Каталог
+            </a>
+            <nav class="menu" id="menu">
+              <a class="menu__logo" href="index.html" aria-label="логотип">
+                <img src="images/icons/logo.svg" alt="logo">
+              </a>
+              <div class="menu__close">
+                <img src="images/icons/close.svg" alt="close">
+              </div>
+              <ul>
+                <li>
+                  <a class="menu__link" href="#!">Лазерные маркеры</a>
+                </li>
+                <li>
+                  <a class="menu__link" href="#!">Лазерная сварка и пайка</a>
+                </li>
+                <li>
+                  <a class="menu__link" href="#!">Лазерная очистка</a>
+                </li>
+                <li>
+                  <a class="menu__link" href="#!">Блог</a>
+                </li>
+              </ul>
+              <div class="header__block">
+                <div class="header__box">
+                  <img src="images/icons/clock.svg" alt="icon">
+                  <address>Склады в СПБ и Москве <span>(Пн-Пт, 10:00 — 19:00)</span></address>
+                </div>
+                <div class="header__box">
+                  <img src="images/icons/phone.svg" alt="icon">
+                  <a href="tel:+74994559250">+7 (499) 455-92-50</a>
+                </div>
+                <div class="header__box">
+                  <img src="images/icons/email.svg" alt="icon">
+                  <a href="mailto:info@smithlaser.ru">info@smithlaser.ru</a>
+                </div>
+              </div>
+              <div class="header__links">
+                <a href="#!">FAQ: Оплата/Доставка</a>
+                <a href="#!">Контакты</a>
+              </div>
+              <div class="massangers">
+                <div class="header__title">
+                  <h2>Подпишись</h2>
+                </div>
+                <div class="massangers__wrapper">
+                  <a href="#!">
+                    <img src="images/icons/vk.svg" alt="иконка вконтакте">
+                  </a>
+                  <a href="#!">
+                    <img src="images/icons/f.svg" alt="иконка фейсбука">
+                  </a>
+                  <a href="#!">
+                    <img src="images/icons/youtube.svg" alt="иконка ютуба">
+                  </a>
+                  <a href="#!">
+                    <img src="images/icons/inst.svg" alt="иконка инстаграма">
+                  </a>
+                  <a href="#!">
+                    <img src="images/icons/ok.svg" alt="иконка одноклассники">
+                  </a>
+                </div>
+              </div>
+              <div class="header__contacts">
+                <div class="header__title">
+                  <h2>Контакты</h2>
+                </div>
+                <div class="header__contact">
+                  <div class="header__contact-icon">
+                    <img src="images/icons/icon-massenger.svg" alt="icon">
+                  </div>
+                  <div class="header__contact-inner">
+                    <div class="header__contact-links">
+                      <a href="#!">WhatsApp,</a>
+                      <a href="#!">Telegram,</a>
+                      <a href="#!">Viber</a>
+                    </div>
+                    <div class="header__contact-box">
+                      <a href="tel:+79816825691">8 (981) 682-56-91</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="header__contact">
+                  <div class="header__contact-icon">
+                    <img src="images/icons/icon-email.svg" alt="icon">
+                  </div>
+                  <div class="header__contact-inner">
+                    <div class="header__contact-links">
+                      <a href="mailto:info@smithlaser.ru">Email (тех.поддержка)</a>
+                    </div>
+                    <div class="header__contact-box">
+                      <a href="mailto:info@smithlaser.ru">info@smithlaser.ru</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+    </header>
+
+    <main class="main">
+      <div class="breadcrumbs _container">
+        <ul class="breadcrumbs__list" itemscope itemtype="http://schema.org/BreadcrumbList">
+          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <a itemprop="item" href="#" class="breadcrumbs__item-link">
+              <span itemprop="name">Главная страница</span>
+            </a>
+            <meta itemprop="position" content="1"/>
+          </li>
+          <li class="breadcrumbs__item" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+            <span itemprop="name">Лазерные маркеры</span>
+            <meta itemprop="position" content="2"/>
+          </li>
+        </ul>
+      </div>
+      
+      <section class="catalog _container">
+        <aside class="filter">
+          <div class="accordion__wrapper">
+            <div class="accordion">
+              <div class="accordion__title" data-tab="tab-1">
+                <h3>Цена, руб</h3>
+                <span></span>
+              </div>
+              <div class="accordion__content" id="tab-1">
+                <div class="filter__slider">
+                  <div class="values">
+                    <div class="values__inner">
+                      <span class="values__dash">от</span>
+                      <input type="text" id="minInput1" placeholder=""/>
+                    </div>
+                    <div class="values__inner">
+                      <span class="values__dash">до</span>
+                      <input type="text" id="maxInput1" placeholder=""/>
+                    </div>
+                  </div>
+                  <div id="slider1"></div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__title" data-tab="tab-2">
+                <h3>Напряжение</h3>
+                <span></span>
+              </div>
+              <div class="accordion__content" id="tab-2">
+                <div class="checkbox">
+                  <input class="checkbox__input _req" id="1" type="checkbox" name="agreement">
+                  <label class="checkbox__label" for="1">
+                    <span class="checkbox__text">220В</span>
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <input class="checkbox__input _req" id="2" type="checkbox" name="agreement">
+                  <label class="checkbox__label" for="2">
+                    <span class="checkbox__text">360В</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__title" data-tab="tab-3">
+                <h3>Тип исполнения</h3>
+                <span></span>
+              </div>
+              <div class="accordion__content" id="tab-3">
+                <div class="checkbox">
+                  <input class="checkbox__input _req" id="3" type="checkbox" name="agreement">
+                  <label class="checkbox__label" for="3">
+                    <span class="checkbox__text">Конвеерный</span>
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <input class="checkbox__input _req" id="4" type="checkbox" name="agreement">
+                  <label class="checkbox__label" for="4">
+                    <span class="checkbox__text">Напольный</span>
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <input class="checkbox__input _req" id="5" type="checkbox" name="agreement">
+                  <label class="checkbox__label" for="5">
+                    <span class="checkbox__text">Настольный</span>
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <input class="checkbox__input _req" id="6" type="checkbox" name="agreement">
+                  <label class="checkbox__label" for="6">
+                    <span class="checkbox__text">Переносной</span>
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <input class="checkbox__input _req" id="7" type="checkbox" name="agreement">
+                  <label class="checkbox__label" for="7">
+                    <span class="checkbox__text">Портативный</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__title" data-tab="tab-4">
+                <h3>Масса (вес), кг</h3>
+                <span></span>
+              </div>
+              <div class="accordion__content" id="tab-4">
+                <div class="filter__slider">
+                  <div class="values">
+                    <div class="values__inner">
+                      <span class="values__dash">от</span>
+                      <input type="text" id="minInput2" placeholder=""/>
+                    </div>
+                    <div class="values__inner">
+                      <span class="values__dash">до</span>
+                      <input type="text" id="maxInput2" placeholder=""/>
+                    </div>
+                  </div>
+                 <div id="slider2"></div>
+               </div>
+              </div>
+            </div>
+            <div class="accordion">
+              <div class="accordion__title" data-tab="tab-5">
+                <h3>Мощность лазера, Вт</h3>
+                <span></span>
+              </div>
+              <div class="accordion__content" id="tab-5">
+                <div class="checkbox">
+                  <input class="checkbox__input _req" id="8" type="checkbox" name="agreement">
+                  <label class="checkbox__label" for="8">
+                    <span class="checkbox__text">Конвеерный</span>
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <input class="checkbox__input _req" id="9" type="checkbox" name="agreement">
+                  <label class="checkbox__label" for="9">
+                    <span class="checkbox__text">Напольный</span>
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <input class="checkbox__input _req" id="10" type="checkbox" name="agreement">
+                  <label class="checkbox__label" for="10">
+                    <span class="checkbox__text">Настольный</span>
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <input class="checkbox__input _req" id="11" type="checkbox" name="agreement">
+                  <label class="checkbox__label" for="11">
+                    <span class="checkbox__text">Переносной</span>
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <input class="checkbox__input _req" id="12" type="checkbox" name="agreement">
+                  <label class="checkbox__label" for="12">
+                    <span class="checkbox__text">Портативный</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <div class="catalog__body">
+          <div class="card">
+            <div class="card__image">
+              <img src="images/card-img1.webp" alt="card">
+            </div>
+            <div class="card__title">
+              <h3>Лазерный маркер SMITHLASER WP с тумбой</h3>
+            </div>
+            <div class="card__costs">
+              <div class="card__cost">
+                <span>370 000 ₽</span>
+                <p>под заказ</p>
+              </div>
+              <div class="card__cost">
+                <span>390 000 ₽</span>
+                <p>со склада</p>
+              </div>
+            </div>
+            <div class="card__info">
+              <p>Мощность лазера:</p>
+              <span>20, 30 или 50 Вт</span>
+            </div>
+            <div class="card__info">
+              <p>Рабочее поле:</p>
+              <span>100х100, 200х200 или 300х300 мм</span>
+            </div>
+            <div class="card__buttons">
+              <a href="#!" class="card__button button-filled">
+                <img src="images/icons/tel-white.svg" alt="icon">
+                Оставить заявку
+              </a>
+              <a class="card__favourites" href="#!">
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.1111 1C18.6333 1 21 4.3525 21 7.48C21 13.8138 11.1778 19 11 19C10.8222 19 1 13.8138 1 7.48C1 4.3525 3.36667 1 6.88889 1C8.91111 1 10.2333 2.02375 11 2.92375C11.7667 2.02375 13.0889 1 15.1111 1Z" stroke="#DF2127" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__image">
+              <img src="images/card-img2.webp" alt="card">
+            </div>
+            <div class="card__title">
+              <h3>Лазерный маркер SMITHLASER WP с тумбой</h3>
+            </div>
+            <div class="card__costs">
+              <div class="card__cost">
+                <span>370 000 ₽</span>
+                <p>под заказ</p>
+              </div>
+              <div class="card__cost">
+                <span>390 000 ₽</span>
+                <p>со склада</p>
+              </div>
+            </div>
+            <div class="card__info">
+              <p>Мощность лазера:</p>
+              <span>20, 30 или 50 Вт</span>
+            </div>
+            <div class="card__info">
+              <p>Рабочее поле:</p>
+              <span>100х100, 200х200 или 300х300 мм</span>
+            </div>
+            <div class="card__buttons">
+              <a href="#!" class="card__button button-filled">
+                <img src="images/icons/tel-white.svg" alt="icon">
+                Оставить заявку
+              </a>
+              <a class="card__favourites" href="#!">
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.1111 1C18.6333 1 21 4.3525 21 7.48C21 13.8138 11.1778 19 11 19C10.8222 19 1 13.8138 1 7.48C1 4.3525 3.36667 1 6.88889 1C8.91111 1 10.2333 2.02375 11 2.92375C11.7667 2.02375 13.0889 1 15.1111 1Z" stroke="#DF2127" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__image">
+              <img src="images/card-img3.webp" alt="card">
+            </div>
+            <div class="card__title">
+              <h3>Лазерный маркер SMITHLASER WP с тумбой</h3>
+            </div>
+            <div class="card__costs">
+              <div class="card__cost">
+                <span>370 000 ₽</span>
+                <p>под заказ</p>
+              </div>
+              <div class="card__cost">
+                <span>390 000 ₽</span>
+                <p>со склада</p>
+              </div>
+            </div>
+            <div class="card__info">
+              <p>Мощность лазера:</p>
+              <span>20, 30 или 50 Вт</span>
+            </div>
+            <div class="card__info">
+              <p>Рабочее поле:</p>
+              <span>100х100, 200х200 или 300х300 мм</span>
+            </div>
+            <div class="card__buttons">
+              <a href="#!" class="card__button button-filled">
+                <img src="images/icons/tel-white.svg" alt="icon">
+                Оставить заявку
+              </a>
+              <a class="card__favourites" href="#!">
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.1111 1C18.6333 1 21 4.3525 21 7.48C21 13.8138 11.1778 19 11 19C10.8222 19 1 13.8138 1 7.48C1 4.3525 3.36667 1 6.88889 1C8.91111 1 10.2333 2.02375 11 2.92375C11.7667 2.02375 13.0889 1 15.1111 1Z" stroke="#DF2127" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__image">
+              <img src="images/card-img1.webp" alt="card">
+            </div>
+            <div class="card__title">
+              <h3>Лазерный маркер SMITHLASER WP с тумбой</h3>
+            </div>
+            <div class="card__costs">
+              <div class="card__cost">
+                <span>370 000 ₽</span>
+                <p>под заказ</p>
+              </div>
+              <div class="card__cost">
+                <span>390 000 ₽</span>
+                <p>со склада</p>
+              </div>
+            </div>
+            <div class="card__info">
+              <p>Мощность лазера:</p>
+              <span>20, 30 или 50 Вт</span>
+            </div>
+            <div class="card__info">
+              <p>Рабочее поле:</p>
+              <span>100х100, 200х200 или 300х300 мм</span>
+            </div>
+            <div class="card__buttons">
+              <a href="#!" class="card__button button-filled">
+                <img src="images/icons/tel-white.svg" alt="icon">
+                Оставить заявку
+              </a>
+              <a class="card__favourites" href="#!">
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.1111 1C18.6333 1 21 4.3525 21 7.48C21 13.8138 11.1778 19 11 19C10.8222 19 1 13.8138 1 7.48C1 4.3525 3.36667 1 6.88889 1C8.91111 1 10.2333 2.02375 11 2.92375C11.7667 2.02375 13.0889 1 15.1111 1Z" stroke="#DF2127" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__image">
+              <img src="images/card-img2.webp" alt="card">
+            </div>
+            <div class="card__title">
+              <h3>Лазерный маркер SMITHLASER WP с тумбой</h3>
+            </div>
+            <div class="card__costs">
+              <div class="card__cost">
+                <span>370 000 ₽</span>
+                <p>под заказ</p>
+              </div>
+              <div class="card__cost">
+                <span>390 000 ₽</span>
+                <p>со склада</p>
+              </div>
+            </div>
+            <div class="card__info">
+              <p>Мощность лазера:</p>
+              <span>20, 30 или 50 Вт</span>
+            </div>
+            <div class="card__info">
+              <p>Рабочее поле:</p>
+              <span>100х100, 200х200 или 300х300 мм</span>
+            </div>
+            <div class="card__buttons">
+              <a href="#!" class="card__button button-filled">
+                <img src="images/icons/tel-white.svg" alt="icon">
+                Оставить заявку
+              </a>
+              <a class="card__favourites" href="#!">
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.1111 1C18.6333 1 21 4.3525 21 7.48C21 13.8138 11.1778 19 11 19C10.8222 19 1 13.8138 1 7.48C1 4.3525 3.36667 1 6.88889 1C8.91111 1 10.2333 2.02375 11 2.92375C11.7667 2.02375 13.0889 1 15.1111 1Z" stroke="#DF2127" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card__image">
+              <img src="images/card-img3.webp" alt="card">
+            </div>
+            <div class="card__title">
+              <h3>Лазерный маркер SMITHLASER WP с тумбой</h3>
+            </div>
+            <div class="card__costs">
+              <div class="card__cost">
+                <span>370 000 ₽</span>
+                <p>под заказ</p>
+              </div>
+              <div class="card__cost">
+                <span>390 000 ₽</span>
+                <p>со склада</p>
+              </div>
+            </div>
+            <div class="card__info">
+              <p>Мощность лазера:</p>
+              <span>20, 30 или 50 Вт</span>
+            </div>
+            <div class="card__info">
+              <p>Рабочее поле:</p>
+              <span>100х100, 200х200 или 300х300 мм</span>
+            </div>
+            <div class="card__buttons">
+              <a href="#!" class="card__button button-filled">
+                <img src="images/icons/tel-white.svg" alt="icon">
+                Оставить заявку
+              </a>
+              <a class="card__favourites" href="#!">
+                <svg width="22" height="20" viewBox="0 0 22 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M15.1111 1C18.6333 1 21 4.3525 21 7.48C21 13.8138 11.1778 19 11 19C10.8222 19 1 13.8138 1 7.48C1 4.3525 3.36667 1 6.88889 1C8.91111 1 10.2333 2.02375 11 2.92375C11.7667 2.02375 13.0889 1 15.1111 1Z" stroke="#DF2127" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-form section">
+        <div class="section-form__content _container">
+          <div class="section-form__wrapper">
+            <div class="subtitle">
+              <h2>Есть вопросы? Мы вам перезвоним!</h2>
+            </div>
+            <form class="form" id="form">
+              <div class="form__inner">
+                <div class="form__item">
+                  <input class="form__input _req" id="formName" type="text" name="name" placeholder="Как вас зовут?">
+                 </div>
+                 <div class="form__item">
+                  <input class="form__input _req _number" id="formNumber" type="text" name="number" placeholder="Телефон">
+                 </div>
+                 <div class="form__item">
+                 <button class="form__button" type="submit">Связаться</button>
+                </div>
+              </div>
+              <div class="checkbox">
+                <input class="checkbox__input _req" id="formAgreement" type="checkbox" name="agreement" checked>
+                <label class="checkbox__label" for="formAgreement">
+                  <span class="checkbox__text">Даю согласие на <a href="#!">обработку персональных данных</a> и <a href="#!">пользовательское соглашение</a></span>
+                </label>
+              </div>
+            </form>
+            <div class="section-form__email">
+              <p>Или отправьте запрос по e-mail: <a href="mailto:info@smithlaser.ru">info@smithlaser.ru</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="info section">
+        <div class="info__content _container">
+           <div class="info__block">
+            <div class="info__block-image">
+              <img src="images/info-img.webp" alt="img">
+            </div>
+            <div class="info__block-text">
+              <h2>Проверка и отправка</h2>
+              <p>
+                Компания SMITHLASER предлагает широкий ассортимент лазерного и 
+                фрезерного оборудования для решения производственных задач. В 
+                нашем каталоге представлено оборудование для работы с различными 
+                материалами (металлы, дерево, фанера, ткани, кожа, керамика, стекло и т.д.). 
+                Мы предлагаем станки для гравировки, маркировки, резки, плоттеры и фрезерные станки, а также любые комплектующие к ним.
+              </p>
+              <p>
+                Все сотрудники нашей компании — настоящие профессионалы, которые готовы проконсультировать вас по любым вопросам. Мы поможем выбрать лазерное оборудование фрезерные станки, режущие плоттеры и другую
+                технику. Кроме того, мы предлагаем свои услуги по доставке, установке и настройке оборудования, а также постгарантийный ремонт при необходимости.
+              </p>
+              <p>
+                Мы идем навстречу клиентам и готовы отправить ваше оборудование другими транспортными компаниями. Главным условиям такой доставки является самостоятельный забор груза компанией, которая выполняет данную услугу.
+              </p>
+            </div>
+           </div>
+           <div class="info__block">
+            <div class="info__block-text">
+              <h2>Проверка и отправка</h2>
+              <p>
+                В сервисном центре мы обслуживаем как клиентов, покупавших оборудование у нас, так и тех, кто приобрел станки у других поставщиков. Мы поможем, если вам нужно:
+              </p>
+              <ul>
+                <li>Запустить и настроить оборудование</li>
+                <li>Провести диагностический осмотр</li>
+                <li>Почистить, смазать механизмы</li>
+                <li>Отремонтировать или заменить сломавшиеся или износившиеся детали</li>
+              </ul>
+              <p>
+                На оборудование мы предоставляем гарантию от 1 года до 3 лет. Если вы соблюдали правила эксплуатации, но у вас все равно что-то сломалось, ремонт и замена - за наш счет!
+              </p>
+            </div>
+            <div class="info__block-image info__block-image--mod">
+              <img src="images/info-img.webp" alt="img">
+            </div>
+           </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__content _container">
+        <div class="footer__body">
+          <div class="footer__block">
+            <a class="footer__logo" href="index.html">
+              <img src="images/icons/logo.svg" alt="logo">
+            </a>
+            <h2>Подпишись</h2>
+            <div class="massangers__wrapper">
+              <a href="#!">
+                <img src="images/icons/vk-white.svg" alt="иконка вконтакте">
+              </a>
+              <a href="#!">
+                <img src="images/icons/f-white.svg" alt="иконка фейсбука">
+              </a>
+              <a href="#!">
+                <img src="images/icons/youtube-white.svg" alt="иконка ютуба">
+              </a>
+              <a href="#!">
+                <img src="images/icons/inst-white.svg" alt="иконка инстаграма">
+              </a>
+              <a href="#!">
+                <img src="images/icons/ok-white.svg" alt="иконка одноклассники">
+              </a>
+            </div>
+          </div>
+          <div class="footer__inner">
+            <div class="footer__block">
+              <h2>Оборудование</h2>
+                <ul>
+                  <li>
+                    <a href="#!">Лазерные маркеры</a>
+                  </li>
+                  <li>
+                    <a href="#!">Лазерная сварка и пайка</a>
+                  </li>
+                  <li>
+                    <a href="#!">Лазерная очистка</a>
+                  </li>
+                </ul>
+            </div>
+            <div class="footer__block">
+              <h2>Компания</h2>
+                <ul>
+                  <li>
+                    <a href="#!">Реквизиты</a>
+                  </li>
+                  <li>
+                    <a href="#!">Карта сайта</a>
+                  </li>
+                </ul>
+            </div>
+            <div class="footer__block">
+              <h2>Контакты</h2>
+              <div class="header__contact">
+                <div class="header__contact-icon">
+                  <img src="images/icons/icon-massenger.svg" alt="icon">
+                </div>
+                <div class="header__contact-inner">
+                  <div class="header__contact-links">
+                    <a href="#!">WhatsApp,</a>
+                    <a href="#!">Telegram,</a>
+                    <a href="#!">Viber</a>
+                  </div>
+                  <div class="header__contact-box">
+                    <a href="tel:+79816825691">8 (981) 682-56-91</a>
+                  </div>
+                </div>
+              </div>
+              <div class="header__contact">
+                <div class="header__contact-icon">
+                  <img src="images/icons/icon-email.svg" alt="icon">
+                </div>
+                <div class="header__contact-inner">
+                  <div class="header__contact-links">
+                    <a href="mailto:info@smithlaser.ru">Email (тех.поддержка)</a>
+                  </div>
+                  <div class="header__contact-box">
+                    <a href="mailto:info@smithlaser.ru">info@smithlaser.ru</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <div class="footer__links">
+            <a href="#!">Политика конфиденциальности</a>
+            <a href="#!">Пользовательское соглашение</a>
+            <a href="#!">Сервисное обслуживание</a>
+          </div>
+          <p>© 2025 SMITHLASER</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="https://unpkg.com/imask"></script>
+  <script src="js/main.js"></script>  
+</body>
+
+</html>
