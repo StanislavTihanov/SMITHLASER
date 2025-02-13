@@ -2,6 +2,52 @@
   .tabs {
     display: flex;
     flex-direction: column;
+    &--mod { 
+      .tab-labels__inner {
+        border: none;
+        padding: 0px;
+      }
+      .tab-labels {
+        display: flex;
+        justify-content: start;
+        gap: 16px;
+        width: 100%;
+        min-width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+        -ms-overflow-style: none; 
+      }
+    
+      .tab-labels::-webkit-scrollbar {
+        display: none;
+      }
+    
+      .tab-labels__inner {
+        display: flex;
+        min-width: max-content; 
+      }
+      .tab-label {
+        width: auto;
+        color: var(--color-black);
+        text-transform: none;
+        background-color: var(--color-gray);
+        padding: 16px 24px;
+        white-space: nowrap;
+        @include fluid-text(12, 16);
+    
+        &:not(:last-child) {
+          margin-right: 15px;
+        }
+        @include mobile {
+          border-radius: 12px;
+          padding: 12px 16px;
+        }
+      }
+      .tab-content {
+        padding: 0px;
+      }
+    }
   }
   .tab-labels {
     background-color: var(--color-white);
@@ -51,13 +97,17 @@
   }
   #tab-1:checked ~ .content-1,
   #tab-2:checked ~ .content-2,
-  #tab-3:checked ~ .content-3 {
+  #tab-3:checked ~ .content-3,
+  #tab-4:checked ~ .content-4,
+  #tab-5:checked ~ .content-5 {
     display: block;
   }
   #tab-1:checked ~ .tab-labels label[for="tab-1"],
   #tab-2:checked ~ .tab-labels label[for="tab-2"],
-  #tab-3:checked ~ .tab-labels label[for="tab-3"] {
-    background-color: var(--color-red);
+  #tab-3:checked ~ .tab-labels label[for="tab-3"],
+  #tab-4:checked ~ .tab-labels label[for="tab-4"],
+  #tab-5:checked ~ .tab-labels label[for="tab-5"] {
+    background-color: var(--color-black);
     color: var(--color-white);
   }
   input[type="radio"] {

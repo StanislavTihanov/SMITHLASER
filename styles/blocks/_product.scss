@@ -1,0 +1,103 @@
+/*---------------------------------------product----------------------------*/
+.product {
+    &__content {
+        .title {
+            margin-bottom: 32px;
+        }
+    }
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 24px;
+        @include table {
+            flex-wrap: wrap;
+        }
+    }
+    &__image {
+        flex-basis: 416px;
+    }
+    &__img {
+        display: inline-block;
+        border: 1px solid #dedede;
+        border-radius: 24px;
+        width: 100%;
+        img {
+            width: 100%;
+            object-fit: cover;
+            overflow: hidden;
+        }
+    }
+    &__info {
+        flex-basis: 508px;
+        h2 {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 140%;
+            margin-bottom: 16px;
+        }
+        p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 143%;
+            margin-bottom: 16px;
+            span {
+                font-style: italic;
+                font-weight: 700;
+            }
+        }
+        ul {
+            margin-bottom: 16px;
+            li {
+                position: relative;
+                padding-left: 20px;
+                margin-bottom: 12px;
+                font-size: 14px;
+                line-height: 143%;
+                &::before {
+                    position: absolute;
+                    content: '';
+                    width: 6px;
+                    height: 6px;
+                    top: 7px;
+                    left: 5px;
+                    border-radius: 50%;
+                    background-color: var(--color-black);
+                }
+            }
+        }
+        @include table {
+            order: 1;
+        }
+    }
+    &__card {
+        box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.1);
+        border-radius: 24px;
+        padding: 24px 16px;
+        flex-basis: 307px;
+        .card__costs {
+            display: block;
+            border-bottom: 1px solid #DEDEDE;
+            margin-bottom: 16px;
+        }
+        .card__wrapper {
+            margin-bottom: 16px;
+            border-bottom: 1px solid #DEDEDE;
+            .card__info {
+                display: grid;
+                grid-template-columns: 1fr 1fr
+            }
+        }
+        .card__buttons {
+            gap: 16px;
+        }
+        @include mobile {
+            flex-basis: 100%;
+        }
+    }
+}
+
+
+
+
+/*---------------------------------------product----------------------------*/

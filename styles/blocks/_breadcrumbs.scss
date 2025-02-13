@@ -1,7 +1,12 @@
 /*----------------------------------breadcrumbs--------------------------------*/
 .breadcrumbs {
-    margin-bottom: 50px;
     margin-top: 180px;
+    &--mod {
+        margin-bottom: 50px;
+    }
+    @include table {
+        margin-top: 100px;
+    }
     &__list {
         display: flex;
         align-items: center;
