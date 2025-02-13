@@ -4,23 +4,37 @@
     flex-direction: column;
   }
   .tab-labels {
-    background-color: #1E1F25;
-    padding: 25px 30px;
+    background-color: var(--color-white);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    gap: 15px 80px;
-    border-radius: 6px;
+    gap: 15px;
     margin-bottom: 40px;
+    &__inner {
+      border: 1px solid var(--color-red);
+      padding: 4px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+    }
   }
   .tab-label {
-    padding: 15px 20px;
+    padding: 8px 16px;
     cursor: pointer;
     border: 1px solid transparent;
     transition: background-color 0.3s, border-color 0.3s;
-    width: 100%;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 16px;
+    text-transform: uppercase;
+    color: var(--color-red);
+    width: 220px;
+    font-weight: 500;
+    @include fluid-text(12, 14);
+    line-height: 171%;
+    @include mobile {
+       width: 165px;
+       padding: 8px 5px;
+    }
   }
   .tab-label:hover {
     background-color: #e2e2e270;
@@ -43,7 +57,8 @@
   #tab-1:checked ~ .tab-labels label[for="tab-1"],
   #tab-2:checked ~ .tab-labels label[for="tab-2"],
   #tab-3:checked ~ .tab-labels label[for="tab-3"] {
-    background-color: #272A34;
+    background-color: var(--color-red);
+    color: var(--color-white);
   }
   input[type="radio"] {
     display: none;

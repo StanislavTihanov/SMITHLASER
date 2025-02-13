@@ -2,6 +2,10 @@
 
 .about {
      background-color: var(--color-gray);
+     margin-bottom: 50px;
+     @include mobile {
+        margin-bottom: 0px;
+    }
      &__content {
         max-width: 1150px;
         margin: auto;
@@ -53,20 +57,29 @@
     display: flex;
     justify-content: end;
     align-items: center;
+    position: relative;
+    z-index: 1;
+    @include mobile {
+        justify-content: center;
+    }
 }
-
+.about-slider .swiper-slide.swiper-slide-active {
+    z-index: 10;
+}
 .about-slider .swiper-slide img {
     width: 230px;
     transform: scale(1);
     transition: transform 0.3s ease, opacity 0.3s ease;
     opacity: 0.4;
     transform-origin: center;
+    z-index: 1;
+    position: relative;
 }
 .about-slider .swiper-slide.swiper-slide-active img {
     transform: scale(1.75);
     opacity: 1;
     @include table {
-        transform: scale(1.2);
+        transform: scale(1.5);
     }
 }
 .about-slider .swiper-button-next {
