@@ -1,10 +1,14 @@
 /*---------------------------------------catalog----------------------------*/
 .catalog {
+
     .title {
         margin-bottom: 24px;
         font-weight: 500;
         @include fluid-text(16, 32);
         line-height: 125%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         span {
             font-style: normal;
             color: #979797;
@@ -16,6 +20,12 @@
         justify-content: space-between;
         gap: 16px;
         align-items: start;
+        @include mobile {
+            flex-wrap: wrap;
+        }
+    }
+    &__slider {
+        min-width: 0;
     }
     &__body {
         display: grid;
@@ -23,9 +33,7 @@
         gap: 24px;
         @include desktop {
             grid-template-columns: 1fr 1fr;
-        }
-        @include table {
-            grid-template-columns: 1fr;
+            gap: 16px;
         }
     }
 }
@@ -55,9 +63,31 @@
     &__slider {
         padding-bottom: 30px;
     }
-    @include mobile {
+    &__button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #F3F3F3;
+        padding: 6px 10px;
+        border-radius: 8px;
+        cursor: pointer;
         display: none;
+        @include mobile {
+            display: block;
+        }
     }
+    @include mobile {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        transition: opacity 0.2s ease-in-out;
+        max-width: 100%;
+    }
+}
+.open {
+    visibility: visible;
+    opacity: 1;
+    position: static;
 }
 .noUi-target {
     background: #DEDEDE;
@@ -93,4 +123,54 @@
     border: none;
 }
 
+.control {
+    position: relative;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+}
+.control .swiper-button-prev {
+    left: 0;
+}
+.control .swiper-button-next {
+    right: 70%;
+    @include mobile {
+        right: 0;
+    }
+}
+.control .swiper-button-next,
+.control .swiper-button-prev {
+   background-color: var(--color-white);
+   border: 1px solid #ebecef;
+   border-radius: 6px;
+   width: 30px;
+   height: 30px;
+   padding: 5px;
+   transition: All 0.3s ease 0s;
+   top: 99%;
+   @include hover {
+    background-color: var(--color-red);
+   }
+}
+.control .swiper-button-next::after,
+.control .swiper-button-prev::after {
+    color: var(--color-black);
+    font-size: 15px;
+}
+.control__numbers {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: 30px;
+    margin-bottom: -9px;
+}
+.control__number {
+    border: 1px solid #ebecef;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-left: 50px;
+}
+.control__number.active {
+    color: var(--color-red);
+}
 /*---------------------------------------catalog----------------------------*/

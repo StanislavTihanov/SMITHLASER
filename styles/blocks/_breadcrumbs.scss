@@ -3,6 +3,9 @@
     margin-top: 180px;
     &--mod {
         margin-bottom: 50px;
+        @include mobile {
+            margin-bottom: 16px;
+        }
     }
     @include table {
         margin-top: 100px;

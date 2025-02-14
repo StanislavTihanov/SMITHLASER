@@ -15,9 +15,7 @@ document.querySelectorAll('.search__block-close').forEach(closeButton => {
       closeButton.closest('.search').classList.remove('_act'); // Удаляем _act у ближайшего .search
   });
 });
-
 //------------------------------------------------------------------------search
-
 
 //------------------------------------------------------------------------Меню-Бургер
 const burgerMenu = document.querySelector('.burger');
@@ -37,39 +35,6 @@ document.addEventListener ('click', (e) => {
   }
 })
 //------------------------------------------------------------------------закрытие меню при клике вне его
-
-
-//------------------------------------------------------------------------Прокрутка при клике
-//let buttons = document.querySelectorAll('.menu__link');
-//
-//buttons.forEach((elem)=>{
-//  elem.addEventListener('click',()=>{
-//    menuBody.classList.remove('_active');
-//    burgerMenu.classList.remove('_active');
-//  })
-//})
-//
-//const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
-//
-//if (menuLinks.length > 0) {
-//  menuLinks.forEach(menuLink => {
-//    menuLink.addEventListener("click", onMenuLinkClick);
-//  });
-//  function onMenuLinkClick(e) {
-//    const menuLink = e.target;
-//    if(menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
-//        const gotoBlock = document.querySelector(menuLink.dataset.goto);
-//        const gotoBlockValue = gotoBlock.getBoundingClientRect().top + scrollY - document.querySelector('header').offsetHeight;
-//      
-//        window.scrollTo({
-//        top:gotoBlockValue,
-//        behavior: "smooth"
-//      });
-//      e.preventDefault();
-//    }
-//  }
-//}
-//------------------------------------------------------------------------Прокрутка при клике
 
 //------------------------------------------------------------------------Слайдер
 const mainSlider = document.querySelector('.main-slider');
@@ -112,10 +77,49 @@ if (aboutSlider) {
    }
   });
 }
-//------------------------------------------------------------------------Слайдер
+const productSliders = document.querySelectorAll('.product-slider');
+productSliders.forEach((slider, index) => {
+  new Swiper(slider, {
+    direction: 'horizontal',
+    slidesPerView: 1,
+    spaceBetween: 20,
+    speed: 1000,
+    autoHeight: false,
+    navigation: {
+      nextEl: `.swiper-button-next-${index}`,
+      prevEl: `.swiper-button-prev-${index}`,
+    },
+    pagination: {
+      el: `.swiper-pagination-${index}`,
+      clickable: true,
+    },
+  });
+});
 
+//------------------------------------------------------------------------Слайде
+//------------------------------------------------------------------------Fancybox
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof Fancybox !== "undefined" && typeof Fancybox.bind === "function") {
+      Fancybox.bind("[data-fancybox]", {
+          // Кастомные опции
+      });
+  }
+});
+//------------------------------------------------------------------------Fancybox
 //----------------------------------------------------------------------фильтр
+//----------------------------------------------------------------------кнопка открытия и закрытия фильтра
+document.addEventListener("DOMContentLoaded", function () {
+  const filterButton = document.querySelector('.filter__button');
+  const filter = document.querySelector('.filter');
 
+  if (filterButton && filter) {
+      filterButton.addEventListener('click', () => {
+          filter.classList.toggle('open');
+      });
+  }
+});
+//----------------------------------------------------------------------кнопка открытия и закрытия фильтра
+//----------------------------------------------------------------------ползунки для фильтра
 document.addEventListener("DOMContentLoaded", function () {
   let slider1 = document.getElementById('slider1');
   let minInput = document.getElementById('minInput1');
@@ -202,19 +206,22 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }
 });
-//----------------------------------------------------------------------фильтр
+//----------------------------------------------------------------------ползунки для фильтра
 
+//----------------------------------------------------------------------Аккардион который в фильтре
 const titles = document.querySelectorAll('.accordion__title');
 
 titles.forEach(item => {
     const activeContent = document.querySelector('#' + item.dataset.tab);
 
-    // Изначально делаем активными все элементы
     item.classList.add('active');
     activeContent.classList.add('active');
-    activeContent.style.maxHeight = activeContent.scrollHeight + 'px';
 
-    // Добавляем обработчик клика
+    // Небольшая задержка, чтобы дать браузеру отобразить блок
+    setTimeout(() => {
+        activeContent.style.maxHeight = activeContent.scrollHeight + 'px';
+    }, 50);
+
     item.addEventListener('click', () => {
         if (activeContent.classList.contains('active')) {
             activeContent.classList.remove('active');
@@ -228,272 +235,8 @@ titles.forEach(item => {
     });
 });
 
-
-
-
-
-//-----------------------------------------------------------------------сортировка по атрибутам
-
-//class FilterGallery {
-//  
-//  constructor() {
-//    // Находим элементы меню и контейнер с постами
-//    this.filterMenuList = document.querySelectorAll('.filtermenu__list li');
-//    this.container = document.querySelector('.filtermenu__container');
-//    this.posts = Array.from(this.container.querySelectorAll('.post'));  // Собираем все посты один раз в массив
-//    
-//    this.updateMenu('all');
-//    this.filterMenuList.forEach(item => item.addEventListener('click', (event) => this.onClickFilterMenu(event)));
-//  }
-//
-//  onClickFilterMenu(event) {
-//    const target = event.target.closest('li');  // Используем closest чтобы найти li
-//    const targetFilter = target.getAttribute('data-filter');
-//
-//    this.updateMenu(targetFilter);
-//    this.updateGallery(targetFilter);
-//  }
-//
-//  updateMenu(targetFilter) {
-//    this.filterMenuList.forEach(item => item.classList.remove('active_'));
-//    const activeItem = Array.from(this.filterMenuList).find(item => item.getAttribute('data-filter') === targetFilter);
-//    if (activeItem) activeItem.classList.add('active_');
-//  }
-//
-//  updateGallery(targetFilter) {
-//    // Оптимизация через фильтрацию всех постов разом
-//    const postsToShow = targetFilter === 'all'
-//      ? this.posts
-//      : this.posts.filter(post => post.classList.contains(targetFilter));
-//    
-//    const postsToHide = this.posts.filter(post => !postsToShow.includes(post));
-//
-//    // Анимация скрытия и показа
-//    this.container.style.opacity = 0;
-//    setTimeout(() => {
-//      postsToHide.forEach(post => post.style.display = 'none');
-//      postsToShow.forEach(post => post.style.display = '');
-//      this.container.style.opacity = 1;
-//    }, 300);
-//  }
-//}
-//const filterGallery = new FilterGallery();
-
-
-//-----------------------------------------------------------------------сортировка по атрибутам
-
-//------------------------------------------------------------------------select выпадающий список
-//document.querySelectorAll('.dropdown').forEach(function(dropDownWrapper) {
-//  const dropDownBtn = dropDownWrapper.querySelector('.dropdown__button');
-//  const dropDownList = dropDownWrapper.querySelector('.dropdown__list');
-//  const dropDownListItems = dropDownList.querySelectorAll('.dropdown__list-item');
-//  const dropDownInput = dropDownWrapper.querySelector('.dropdown__input-hidden');
-//
-//  // Функция для закрытия текущего дропдауна
-//  function closeCurrentDropdown() {
-//    dropDownList.classList.remove('dropdown__list--active');
-//    dropDownBtn.classList.remove('dropdown__button--active');
-//  }
-//
-//  // Открыть/закрыть текущий дропдаун
-//  dropDownBtn.addEventListener('click', function (e) {
-//    e.stopPropagation(); // Остановить всплытие события
-//    e.preventDefault(); // Предотвращаем отправку формы
-//    const isActive = dropDownList.classList.contains('dropdown__list--active');
-//
-//    // Закрываем все дропдауны перед открытием текущего
-//    document.querySelectorAll('.dropdown__list--active').forEach(function(activeList) {
-//      activeList.classList.remove('dropdown__list--active');
-//    });
-//    document.querySelectorAll('.dropdown__button--active').forEach(function(activeButton) {
-//      activeButton.classList.remove('dropdown__button--active');
-//    });
-//
-//    // Если текущий дропдаун не был активным, открываем его
-//    if (!isActive) {
-//      dropDownList.classList.add('dropdown__list--active');
-//      dropDownBtn.classList.add('dropdown__button--active');
-//    }
-//  });
-//
-//  // Выбор элемента списка
-//  dropDownListItems.forEach(function (listItem) {
-//    listItem.addEventListener('click', function (e) {
-//      e.stopPropagation(); // Остановить всплытие события
-//      e.preventDefault(); // Предотвращаем отправку формы
-//      dropDownBtn.innerText = this.innerText;
-//      dropDownBtn.focus();
-//      dropDownInput.value = this.dataset.value;
-//      closeCurrentDropdown(); // Закрываем текущий дропдаун после выбора
-//    });
-//  });
-//
-//  // Закрытие при клике снаружи
-//  document.addEventListener('click', function (e) {
-//    if (!dropDownWrapper.contains(e.target)) {
-//      closeCurrentDropdown(); // Закрываем только текущий дропдаун
-//    }
-//  });
-//
-//  // Закрытие при нажатии Tab или Escape
-//  document.addEventListener('keydown', function (e) {
-//    if (e.key === 'Tab' || e.key === 'Escape') {
-//      closeCurrentDropdown(); // Закрываем только текущий дропдаун
-//    }
-//  });
-//});
-//
-//// Инициализация кнопки после загрузки
-//function initMyButton() {
-//  const myButton = document.getElementById('myButton');
-//  
-//  if (myButton && myButton.style.display !== 'none') {
-//    myButton.addEventListener('click', function(event) {
-//      event.preventDefault();
-//    });
-//  }
-//}
-//window.onload = initMyButton;
-
-//------------------------------------------------------------------------select выпадающий список
-
-
-//------------------------------------------------------------------------popup
-//const popupLinks = document.querySelectorAll('.popup-link');
-//const body = document.querySelector('body');
-//const lockPadding = document.querySelectorAll(".lock-padding");
-//
-//
-//let unlock = true;
-//
-//const timeout = 800;
-//
-//if (popupLinks.length > 0) {
-//  for (let index = 0; index < popupLinks.length; index++) {
-//    const popupLink = popupLinks[index];
-//    popupLink.addEventListener("click", function (e) {
-//      const popupName = popupLink.getAttribute('href').replace('#', '');
-//      const currentPopup = document.getElementById(popupName);
-//      popupOpen(currentPopup);
-//      e.preventDefault();
-//    });
-//  }
-//}
-//
-//const popupCloseIcon = document.querySelectorAll('.close-popup');
-//if (popupCloseIcon.length > 0) {
-//  for (let index = 0; index < popupCloseIcon.length; index++) {
-//    const el = popupCloseIcon[index];
-//    el.addEventListener('click', function (e) {
-//      popupClose(el.closest('.popup'));
-//      e.preventDefault();
-//    })
-//  }
-//}
-//
-//function popupOpen(currentPopup) {
-//  if (currentPopup && unlock) {
-//    const popupActive = document.querySelector('.popup.open');
-//    if (popupActive) {
-//      popupClose(popupActive, false);
-//    } else {
-//      bodyLock();
-//    }
-//    currentPopup.classList.add('open');
-//    currentPopup.addEventListener("click", function (e) {
-//      if (!e.target.closest('.popup__content')) {
-//        popupClose(e.target.closest('.popup'));
-//      }
-//    });
-//  }
-//}
-//
-//function popupClose(popupActive, doUnlock = true) {
-//  if (unlock) {
-//    popupActive.classList.remove('open');
-//    if (doUnlock) {
-//      bodyUnlock();
-//    }
-//  }
-//}
-//
-//function bodyLock() {
-//  const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
-//  if (lockPadding.length > 0) {
-//    for (let index = 0; index < lockPadding.length; index++) {
-//      const el = lockPadding[index];
-//      el.style.paddingRight = lockPaddingValue;
-//    }
-//  }
-//  body.style.paddingRight = lockPaddingValue;
-//  body.classList.add('lock');
-//
-//  unlock = false;
-//  setTimeout(function () {
-//    unlock = true;
-//  }, timeout);
-//}
-//
-//function bodyUnlock () {
-//  setTimeout(function () {
-//    if(lockPadding.length > 0) {
-//      for (let index = 0; index < lockPadding.length; index++) {
-//        const el = lockPadding[index];
-//        el.style.paddingRight = '0px';
-//      }
-//  }
-//    body.style.paddingRight = '0px';
-//    body.classList.remove('lock');
-//  }, timeout);
-//  unlock = false;
-//  setTimeout(function () {
-//    unlock = true;
-//  }, timeout);
-//}
-//
-//document.addEventListener('keydown', function (e) {
-//  if (e.which === 27) {
-//    const popupActive = document.querySelector('.popup.open');
-//    popupClose(popupActive);
-//  }
-//});
-//------------------------------------------------------------------------popup
-
-
-//------------------------------------------------------------------------Animation
-//const animItems = document.querySelectorAll('._anim-items');
-//if (animItems.length > 0) {
-//  window.addEventListener('scroll', animOnScroll);
-//  function animOnScroll() {
-//    for (let index = 0; index < animItems.length; index++) {
-//        const animItem = animItems[index];
-//        const animItemHeight = animItem.offsetHeight;
-//        const animItemOffset = offset(animItem).top;
-//        const animStart = 5;
-//
-//        let animItemPoint = window.innerHeight - animItemHeight / animStart;
-//
-//        if (animItemHeight > window.innerHeight) {
-//          animItemPoint = window.innerHeight - window.innerHeight / animStart;
-//        }
-//
-//        if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset + animItemHeight)) {
-//          animItem.classList.add('_action');
-//        } else {
-//          animItem.classList.remove('_action');
-//        }
-//    }
-//  }
-//  function offset(el) {
-//    const rect = el.getBoundingClientRect(),
-//    scrollLeft  = window.pageXOffset || document.documentElement.scrollLeft,
-//    scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-//    return {top: rect.top + scrollTop, left: rect.left + screenLeft}
-//  }
-//  animOnScroll();
-//}
-//------------------------------------------------------------------------Animation
-
+//----------------------------------------------------------------------Аккардион который в фильтре
+//----------------------------------------------------------------------фильтр
 //------------------------------------------------------------------------Обработка формы
 document.addEventListener('DOMContentLoaded', function () {
   const forms = document.querySelectorAll('form'); // Получаем все формы на странице
@@ -590,8 +333,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
   });
 });
-////------------------------------------------------------------------------Обработка форм
+//------------------------------------------------------------------------Обработка форм
 
-////------------------------------------------------------------------------настройка карты
 
-////------------------------------------------------------------------------настройка карты
+//---------------------------------------------------убираем прыгающий хедер при открытии Fancybox
+document.addEventListener("DOMContentLoaded", function () {
+  const fancyboxElements = document.querySelectorAll("[data-fancybox]");
+
+  if (fancyboxElements.length > 0) { // Проверяем, есть ли такие элементы на странице
+      let scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+      document.documentElement.style.setProperty("--scrollbar-width", `${scrollbarWidth}px`);
+
+      Fancybox.bind("[data-fancybox]", {
+          on: {
+              init: () => document.querySelector("header").classList.add("fix-margin"),
+              destroy: () => document.querySelector("header").classList.remove("fix-margin"),
+          }
+      });
+  }
+});
+//---------------------------------------------------убираем прыгающий хедер при открытии Fancybox
+

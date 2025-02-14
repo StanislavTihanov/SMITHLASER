@@ -2,75 +2,96 @@
   .card {
       height: 100%;
       border: none;
-      max-width: 350px;
+      display: grid;
+      grid-template-rows: 1fr 50px;
+      width: 303px;
+      @include table {
+          width: 100%;
+      }
 		&__image {
         border: 1px solid #dedede;
         border-radius: 28px;
         margin-bottom: 12px;
         overflow: hidden;
-        height: 320px;
-        max-width: 305px;
+        max-width: 303px;  
+        margin-right: 2px;
         img {
-          border-radius: 28px;
-          width: 100%;
-          object-fit: cover;
-          height: 100%;
+            border-radius: 28px;
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+         }
+         @include mobile {
+            max-width: 100%;
         }
 		}
 		&__title {
       font-weight: 500;
-      @include fluid-text(12, 16);
-      line-height: 125%;
-      margin-bottom: 8px;
+         @include fluid-text(12, 16);
+            line-height: 125%;
+            margin-bottom: 8px;
 		}
 		&__costs {
-      display: flex;
-      gap: 5px 35px;
+            display: flex;
+            gap: 5px 35px;
+            @include mobile {
+               flex-wrap: wrap;
+               margin-bottom: 8px;
+           }
 		}
 		&__cost {
       margin-bottom: 14px;
-      span {
-        color: #A50005;
-        font-weight: 700;
-        @include fluid-text(14, 18);
-        line-height: 133%;
-      }
-      p {
-        @include fluid-text(10, 14);
-        color: #8B8B8B;
-      }
+         span {
+            color: #A50005;
+            font-weight: 700;
+            @include fluid-text(14, 18);
+            line-height: 133%;
+         }
+         p {
+           @include fluid-text(10, 14);
+               color: #8B8B8B;
+         }
+         @include mobile {
+               margin-bottom: 0px;
+        }
 		}
-
 		&__info {
-      display: flex;
-      gap: 5px;
-      margin-bottom: 12px;
-      p {
-        @include fluid-text(10, 12);
-        color: #8B8B8B;
-        white-space: nowrap;
-        float: right;
-      }
+         display: flex;
+         gap: 5px;
+         @include fluid-text(10, 12);
+         dt {
+            color: #8B8B8B;
+            white-space: nowrap;
+         }
+         @include mobile {
+            flex-wrap: wrap;
+         }
 		}
 		&__buttons {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 5px;
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         gap: 5px;
 		}
-
 		&__favourites {
-      background-color: var(--color-white);
-      border: 2px solid var(--color-red);
-      border-radius: 12px;
-      padding: 8px;
-      transition: all 0.3s ease;
-      @include hover {
-        background-color: var(--color-red);
-         svg path {
-            stroke: var(--color-white);
+         background-color: var(--color-white);
+         border: 2px solid var(--color-red);
+         border-radius: 12px;
+         padding: 8px;
+         transition: all 0.3s ease;
+         margin-right: 2px;
+         @include hover {
+            background-color: var(--color-red);
+            svg path {
+               stroke: var(--color-white);
+            }
          }
-      }
+         @include mobile {
+            padding: 4px;
+            svg  {
+               width: 20px;
+            }
+         }
 		}
     &__button {
         padding: 8px;
@@ -82,6 +103,15 @@
         gap: 8px;
         flex-wrap: wrap;
         transition: all 0.3s ease;
+        @include mobile {
+         border-radius: 12px;
+        }
+        @include fluid-text(12, 14);
+         img {
+           @include mobile {
+              display: none;
+           }
+         }
     }
 }
 

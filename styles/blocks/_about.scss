@@ -2,14 +2,17 @@
 
 .about {
      background-color: var(--color-gray);
-     margin-bottom: 50px;
+     margin-bottom: 100px;
+     padding: 50px 0px 30px 0px;
      @include mobile {
         margin-bottom: 0px;
+        padding: 30px 0px 50px 0px;
     }
      &__content {
         max-width: 1150px;
         margin: auto;
         padding: 0px 16px;
+        position: relative;
      }
     &__body {
         display: flex;
@@ -40,25 +43,30 @@
     &__slider {
         min-width: 0;
         flex-basis: 650px;
+        overflow: hidden;
+        margin-bottom: -100px;
+        @include mobile {
+            margin-bottom: 0px;
+        }
     }
 }
 .about-slider {
     height: 424px;
-    margin-bottom: -100px;
     display: flex;
     justify-content: center;
     align-items: center;
-    @include mobile {
-        margin-bottom: 0px;
-    }
 }
-
+.about-slider .swiper-wrapper {
+    display: flex;
+    align-items: center;
+}
 .about-slider .swiper-slide {
     display: flex;
     justify-content: end;
     align-items: center;
     position: relative;
     z-index: 1;
+    height: auto;
     @include mobile {
         justify-content: center;
     }
@@ -88,7 +96,40 @@
     width: 42px;
     border-radius: 50%;
 }
-
-
-
+.about-slider .swiper-button-next {
+    right: 30px;
+    background-color: var(--color-black);
+    width: 42px;
+    border-radius: 50%;
+    top: 70%;
+    @include mobile {
+      display: none;
+    }
+}
+.about-slider .swiper-button-next::after {
+    display: none;
+}
+.about-slider .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
+}
+.about-slider .swiper-pagination {
+    position: absolute;
+    bottom: -45px;
+    left: 12px;
+    width: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include mobile {
+        bottom: -30px;
+        left: 0px;
+        width: 100%;
+        justify-content: center;
+        gap: 16px;
+    }
+}
+.about-slider .swiper-pagination-bullet-active {
+    background-color: var(--color-red);
+  }
 /*----------------------------------about--------------------------------*/

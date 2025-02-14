@@ -5,15 +5,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="description" content="эталон">
-  <meta name="keywords" content="эталон">
-  <meta property="og:title" content="эталон">
+  <meta name="description" content="SMITHLASER">
+  <meta name="keywords" content="SMITHLASER">
+  <meta property="og:title" content="SMITHLASER">
   <meta property="og:url" content="ссылка на сайт">
   <meta property="og:image:width" content="1000">
   <meta property="og:image:height" content="500">
-  <meta property="og:description" content="эталон">
+  <meta property="og:description" content="SMITHLASER">
   <meta property="og:image" content="путь к картинке/image.webp">
-  <title>Эталон</title>
+  <title>SMITHLASER</title>
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
@@ -26,7 +26,7 @@
 
 <body id="body">
   <div class="wrapper">
-    <header class="header lock-padding">
+    <header class="header">
         <div class="header__content _container">
           <div class="header__top"></div>
           <div class="header__body">
@@ -83,13 +83,13 @@
               </div>
               <ul>
                 <li>
-                  <a class="menu__link" href="#!">Лазерные маркеры</a>
+                  <a class="menu__link" href="catalog.html">Лазерные маркеры</a>
                 </li>
                 <li>
-                  <a class="menu__link" href="#!">Лазерная сварка и пайка</a>
+                  <a class="menu__link" href="catalog.html">Лазерная сварка и пайка</a>
                 </li>
                 <li>
-                  <a class="menu__link" href="#!">Лазерная очистка</a>
+                  <a class="menu__link" href="catalog.html">Лазерная очистка</a>
                 </li>
                 <li>
                   <a class="menu__link" href="#!">Блог</a>
@@ -192,6 +192,12 @@
       <section class="catalog _container">
         <div class="title">
           <h1>Лазерные маркеры <span>245</span></h1>
+          <div class="filter__button">
+            <svg width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M6.49976 3C6.49976 3.82843 5.82818 4.5 4.99976 4.5C4.17133 4.5 3.49976 3.82843 3.49976 3C3.49976 2.17157 4.17133 1.5 4.99976 1.5C5.82818 1.5 6.49976 2.17157 6.49976 3ZM7.90524 3.75C7.57221 5.04392 6.39764 6 4.99976 6C3.60188 6 2.4273 5.04392 2.09427 3.75H0.74707C0.332857 3.75 -0.00292969 3.41421 -0.00292969 3C-0.00292969 2.58579 0.332857 2.25 0.74707 2.25H2.09427C2.4273 0.95608 3.60188 0 4.99976 0C6.39764 0 7.57221 0.95608 7.90524 2.25H13.2499C13.6641 2.25 13.9999 2.58579 13.9999 3C13.9999 3.41421 13.6641 3.75 13.2499 3.75H7.90524ZM0.74707 8.25L6.09183 8.25C6.42486 6.95608 7.59944 6 8.99732 6C10.3952 6 11.5698 6.95608 11.9028 8.25H13.25C13.6642 8.25 14 8.58579 14 9C14 9.41421 13.6642 9.75 13.25 9.75H11.9028C11.5698 11.0439 10.3952 12 8.99731 12C7.59944 12 6.42486 11.0439 6.09183 9.75L0.74707 9.75C0.332857 9.75 -0.00292969 9.41421 -0.00292969 9C-0.00292969 8.58579 0.332857 8.25 0.74707 8.25ZM8.99731 7.5C8.16889 7.5 7.49731 8.17157 7.49731 9C7.49731 9.82843 8.16889 10.5 8.99731 10.5C9.82574 10.5 10.4973 9.82843 10.4973 9C10.4973 8.17157 9.82574 7.5 8.99731 7.5Z" fill="#8B8B8B" />
+            </svg>
+            Фильтры
+          </div>
         </div>
         <div class="catalog__content">
           <aside class="filter">
@@ -342,7 +348,9 @@
                 <img src="images/card-img1.webp" alt="card">
               </div>
               <div class="card__title">
-                <h3>Лазерный маркер SMITHLASER WP с тумбой</h3>
+                <h3>
+                  <a href="product.html">Лазерный маркер SMITHLASER WP с тумбой</a>
+                </h3>
               </div>
               <div class="card__costs">
                 <div class="card__cost">
@@ -354,16 +362,18 @@
                   <p>со склада</p>
                 </div>
               </div>
-              <div class="card__info">
-                <p>Мощность лазера:</p>
-                <span>20, 30 или 50 Вт</span>
-              </div>
-              <div class="card__info">
-                <p>Рабочее поле:</p>
-                <span>100х100, 200х200 или 300х300 мм</span>
-              </div>
+              <dl class="card__info-list">
+                <div class="card__info">
+                  <dt>Мощность лазера:</dt>
+                  <dd>20, 30 или 50 Вт</dd>
+                </div>
+                <div class="card__info">
+                  <dt>Рабочее поле:</dt>
+                  <dd>100х100, 200х200 или 300х300 мм</dd>
+                </div>
+              </dl>              
               <div class="card__buttons">
-                <a href="#!" class="card__button button-filled">
+                <a href="#section-form" class="card__button button-filled">
                   <img src="images/icons/tel-white.svg" alt="icon">
                   Оставить заявку
                 </a>
@@ -379,7 +389,9 @@
                 <img src="images/card-img2.webp" alt="card">
               </div>
               <div class="card__title">
-                <h3>Лазерный маркер SMITHLASER WP с тумбой</h3>
+                <h3>
+                  <a href="product.html">Лазерный маркер SMITHLASER WP с тумбой</a>
+                </h3>
               </div>
               <div class="card__costs">
                 <div class="card__cost">
@@ -391,16 +403,18 @@
                   <p>со склада</p>
                 </div>
               </div>
-              <div class="card__info">
-                <p>Мощность лазера:</p>
-                <span>20, 30 или 50 Вт</span>
-              </div>
-              <div class="card__info">
-                <p>Рабочее поле:</p>
-                <span>100х100, 200х200 или 300х300 мм</span>
-              </div>
+              <dl class="card__info-list">
+                <div class="card__info">
+                  <dt>Мощность лазера:</dt>
+                  <dd>20, 30 или 50 Вт</dd>
+                </div>
+                <div class="card__info">
+                  <dt>Рабочее поле:</dt>
+                  <dd>100х100, 200х200 или 300х300 мм</dd>
+                </div>
+              </dl>              
               <div class="card__buttons">
-                <a href="#!" class="card__button button-filled">
+                <a href="#section-form" class="card__button button-filled">
                   <img src="images/icons/tel-white.svg" alt="icon">
                   Оставить заявку
                 </a>
@@ -416,7 +430,9 @@
                 <img src="images/card-img3.webp" alt="card">
               </div>
               <div class="card__title">
-                <h3>Лазерный маркер SMITHLASER WP с тумбой</h3>
+                <h3>
+                  <a href="product.html">Лазерный маркер SMITHLASER WP с тумбой</a>
+                </h3>
               </div>
               <div class="card__costs">
                 <div class="card__cost">
@@ -428,16 +444,18 @@
                   <p>со склада</p>
                 </div>
               </div>
-              <div class="card__info">
-                <p>Мощность лазера:</p>
-                <span>20, 30 или 50 Вт</span>
-              </div>
-              <div class="card__info">
-                <p>Рабочее поле:</p>
-                <span>100х100, 200х200 или 300х300 мм</span>
-              </div>
+              <dl class="card__info-list">
+                <div class="card__info">
+                  <dt>Мощность лазера:</dt>
+                  <dd>20, 30 или 50 Вт</dd>
+                </div>
+                <div class="card__info">
+                  <dt>Рабочее поле:</dt>
+                  <dd>100х100, 200х200 или 300х300 мм</dd>
+                </div>
+              </dl>              
               <div class="card__buttons">
-                <a href="#!" class="card__button button-filled">
+                <a href="#section-form" class="card__button button-filled">
                   <img src="images/icons/tel-white.svg" alt="icon">
                   Оставить заявку
                 </a>
@@ -453,7 +471,9 @@
                 <img src="images/card-img1.webp" alt="card">
               </div>
               <div class="card__title">
-                <h3>Лазерный маркер SMITHLASER WP с тумбой</h3>
+                <h3>
+                  <a href="product.html">Лазерный маркер SMITHLASER WP с тумбой</a>
+                </h3>
               </div>
               <div class="card__costs">
                 <div class="card__cost">
@@ -465,16 +485,18 @@
                   <p>со склада</p>
                 </div>
               </div>
-              <div class="card__info">
-                <p>Мощность лазера:</p>
-                <span>20, 30 или 50 Вт</span>
-              </div>
-              <div class="card__info">
-                <p>Рабочее поле:</p>
-                <span>100х100, 200х200 или 300х300 мм</span>
-              </div>
+              <dl class="card__info-list">
+                <div class="card__info">
+                  <dt>Мощность лазера:</dt>
+                  <dd>20, 30 или 50 Вт</dd>
+                </div>
+                <div class="card__info">
+                  <dt>Рабочее поле:</dt>
+                  <dd>100х100, 200х200 или 300х300 мм</dd>
+                </div>
+              </dl>              
               <div class="card__buttons">
-                <a href="#!" class="card__button button-filled">
+                <a href="#section-form" class="card__button button-filled">
                   <img src="images/icons/tel-white.svg" alt="icon">
                   Оставить заявку
                 </a>
@@ -490,7 +512,9 @@
                 <img src="images/card-img2.webp" alt="card">
               </div>
               <div class="card__title">
-                <h3>Лазерный маркер SMITHLASER WP с тумбой</h3>
+                <h3>
+                  <a href="product.html">Лазерный маркер SMITHLASER WP с тумбой</a>
+                </h3>
               </div>
               <div class="card__costs">
                 <div class="card__cost">
@@ -502,16 +526,18 @@
                   <p>со склада</p>
                 </div>
               </div>
-              <div class="card__info">
-                <p>Мощность лазера:</p>
-                <span>20, 30 или 50 Вт</span>
-              </div>
-              <div class="card__info">
-                <p>Рабочее поле:</p>
-                <span>100х100, 200х200 или 300х300 мм</span>
-              </div>
+              <dl class="card__info-list">
+                <div class="card__info">
+                  <dt>Мощность лазера:</dt>
+                  <dd>20, 30 или 50 Вт</dd>
+                </div>
+                <div class="card__info">
+                  <dt>Рабочее поле:</dt>
+                  <dd>100х100, 200х200 или 300х300 мм</dd>
+                </div>
+              </dl>              
               <div class="card__buttons">
-                <a href="#!" class="card__button button-filled">
+                <a href="#section-form" class="card__button button-filled">
                   <img src="images/icons/tel-white.svg" alt="icon">
                   Оставить заявку
                 </a>
@@ -527,7 +553,9 @@
                 <img src="images/card-img3.webp" alt="card">
               </div>
               <div class="card__title">
-                <h3>Лазерный маркер SMITHLASER WP с тумбой</h3>
+                <h3>
+                  <a href="product.html">Лазерный маркер SMITHLASER WP с тумбой</a>
+                </h3>
               </div>
               <div class="card__costs">
                 <div class="card__cost">
@@ -539,16 +567,18 @@
                   <p>со склада</p>
                 </div>
               </div>
-              <div class="card__info">
-                <p>Мощность лазера:</p>
-                <span>20, 30 или 50 Вт</span>
-              </div>
-              <div class="card__info">
-                <p>Рабочее поле:</p>
-                <span>100х100, 200х200 или 300х300 мм</span>
-              </div>
+              <dl class="card__info-list">
+                <div class="card__info">
+                  <dt>Мощность лазера:</dt>
+                  <dd>20, 30 или 50 Вт</dd>
+                </div>
+                <div class="card__info">
+                  <dt>Рабочее поле:</dt>
+                  <dd>100х100, 200х200 или 300х300 мм</dd>
+                </div>
+              </dl>              
               <div class="card__buttons">
-                <a href="#!" class="card__button button-filled">
+                <a href="#section-form" class="card__button button-filled">
                   <img src="images/icons/tel-white.svg" alt="icon">
                   Оставить заявку
                 </a>
@@ -561,9 +591,20 @@
             </div>
           </div>
         </div>
+
+        <div class="control">
+          <div class="control__numbers">
+            <div class="control__number active">1</div>
+            <div class="control__number">2</div>
+            <div class="control__number">3</div>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        
       </section>
 
-      <section class="section-form section">
+      <section class="section-form section" id="section-form">
         <div class="section-form__content _container">
           <div class="section-form__wrapper">
             <div class="subtitle">

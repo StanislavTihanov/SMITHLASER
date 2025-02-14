@@ -50,7 +50,7 @@
     }
     &__button {
         width: 196px;
-        padding: 10px;
+        padding: 13px;
         background-color: var(--color-red);
         cursor: pointer;
         color: var(--color-white);
@@ -81,6 +81,10 @@
     }
 }
 .section-form {
+    scroll-margin-top: 150px; 
+    @include mobile {
+        scroll-margin-top: 80px; 
+    }
     &__wrapper {
         background-color: var(--color-gray);
         padding: 32px 16px;
@@ -103,4 +107,5 @@
         }
     }
 }
+
 /*----------------------------------form--------------------------------*/

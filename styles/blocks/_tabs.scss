@@ -3,6 +3,14 @@
     display: flex;
     flex-direction: column;
     &--mod { 
+      #tab-1:checked ~ .tab-labels label[for="tab-1"],
+      #tab-2:checked ~ .tab-labels label[for="tab-2"],
+      #tab-3:checked ~ .tab-labels label[for="tab-3"],
+      #tab-4:checked ~ .tab-labels label[for="tab-4"],
+      #tab-5:checked ~ .tab-labels label[for="tab-5"] {
+        background-color: var(--color-black);
+        color: var(--color-white);
+      }
       .tab-labels__inner {
         border: none;
         padding: 0px;
@@ -18,11 +26,9 @@
         scrollbar-width: none;
         -ms-overflow-style: none; 
       }
-    
       .tab-labels::-webkit-scrollbar {
         display: none;
       }
-    
       .tab-labels__inner {
         display: flex;
         min-width: max-content; 
@@ -107,7 +113,7 @@
   #tab-3:checked ~ .tab-labels label[for="tab-3"],
   #tab-4:checked ~ .tab-labels label[for="tab-4"],
   #tab-5:checked ~ .tab-labels label[for="tab-5"] {
-    background-color: var(--color-black);
+    background-color: var(--color-red);
     color: var(--color-white);
   }
   input[type="radio"] {

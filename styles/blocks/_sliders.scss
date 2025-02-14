@@ -1,32 +1,7 @@
 /*---------------------------------------sliders----------------------------*/
-.main-slider,
-.about-slider {
+.main-slider {
   overflow: hidden;
   position: relative;
-}
-/*---------------------------------------параметры чтобы слайды имели одинаковую высоту----------------------------*/
-.about-slider .swiper-wrapper {
-  display: flex;
-  align-items: center;
-}
-.about-slider .swiper-slide {
-  height: auto;
-}
-/*---------------------------------------параметры чтобы слайды имели одинаковую высоту----------------------------*/
-.about-slider .swiper-pagination {
-  position: absolute;
-}
-.about-slider .swiper-button-next {
-  right: 30px;
-  background-color: var(--color-black);
-  width: 42px;
-  border-radius: 50%;
-  @include mobile {
-    display: none;
-  }
-}
-.swiper-button-next::after {
-  display: none;
 }
 .main-slider .swiper-pagination-bullet {
   opacity: 1;

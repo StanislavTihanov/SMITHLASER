@@ -67,6 +67,9 @@
                 height: 100%;
                 object-fit: cover;
             }
+            @include mobile {
+                max-width: 100%;
+            }
         }
         @include mobile {
             flex-basis: 100%;
@@ -289,7 +292,7 @@
                      object-fit: cover;
                 }
                  @include mobile {
-                    margin-left: -150px;
+                    margin-left: -10px;
                 }
             }
             @include mobile {
